@@ -1,0 +1,79 @@
+<p>add-clients works!</p>
+
+
+
+<div class="container">
+    <div>
+    <h2>Inscription :</h2>
+    </div>
+
+    <form >
+    <div class="col-sm-5 col-md-5 col-lg-5">
+
+    <label >Nom</label>
+    <input type="text" [(ngModel)]="newClient.nom"
+    name="nom" class="form-control">
+    </div>
+
+    <div class="col-sm-5 col-md-5 col-lg-5">
+    <label >Prenom</label>
+    <input type="text"[(ngModel)]= "newClient.prenom"
+    name="prenom" class="form-control">
+    </div>
+    
+    <div class="col-sm-5 col-md-5 col-lg-5">
+    <label >Date de Naissance</label>
+    <input type="date" [(ngModel)]= "newClient.birthday"
+    name="birthday" class="form-control">
+    </div>
+
+    <div class="col-sm-5 col-md-5 col-lg-5">
+        <label >Adresse</label>
+        <input type="text" [(ngModel)]="newClient.adresse"
+        name="adresse" class="form-control">
+        </div>
+
+        <div class="col-sm-5 col-md-5 col-lg-5">
+        <label >Code Postal</label>
+        <input type="number"[(ngModel)]= "newClient.codePostal"
+        name="codePostal" class="form-control">
+        </div>
+
+        <div class="col-sm-5 col-md-5 col-lg-5">
+        <label >Ville</label>
+        <input type="text" [(ngModel)]= "newClient.ville"
+        name="ville" class="form-control">
+        </div>
+
+        <div class="col-sm-5 col-md-5 col-lg-5">
+            <label >E-mail</label>
+            <input type="text" [(ngModel)]="newClient.email"
+            name="email" class="form-control">
+            </div>
+
+            <div class="col-sm-5 col-md-5 col-lg-5">
+            <label >Identifiant</label>
+            <input type="text"[(ngModel)]= "newClient.identifiant"
+            name="identifiant" class="form-control">
+            </div>
+
+            <div class="col-sm-5 col-md-5 col-lg-5">
+            <label >Mot de Passe</label>
+            <input type="text" [(ngModel)]= "newClient.password"
+            name="password" class="form-control">
+            </div>
+    
+            <div class="mt-2">
+    <button type="submit" (click)="addClient()" class="btn btn-success">Inscription</button>
+    <div> <h5>
+{{message}}
+
+    </h5>
+
+
+    </div>
+
+    </div>
+    </form>
+    </div>
+
