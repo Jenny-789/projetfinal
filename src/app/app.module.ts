@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { AddClientsComponent } from './add-clients/add-clients.component';
 import { ClientsComponent } from './clients/clients.component';
 import { LoginComponent } from './login/login.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddClientsComponent,
     ClientsComponent,
-    LoginComponent
+    LoginComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
