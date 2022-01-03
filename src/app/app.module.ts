@@ -8,6 +8,9 @@ import { AddClientsComponent } from './add-clients/add-clients.component';
 import { ClientsComponent } from './clients/clients.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { ArticleComponent } from './article/article.component';
+import { PanierComponent } from './panier/panier.component';
+import { AjoutarticleComponent } from './ajoutarticle/ajoutarticle.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { MenuComponent } from './menu/menu.component';
     AddClientsComponent,
     ClientsComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    ArticleComponent,
+    PanierComponent,
+    AjoutarticleComponent
   ],
   imports: [
     BrowserModule,

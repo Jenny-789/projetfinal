@@ -1,0 +1,28 @@
+<p>article works!</p>
+<div class="container">
+  <input type="number" name="id" [(ngModel)]="article.id" class="form-control">
+  <input type="text" name="nom" [(ngModel)]="article.marque" class="form-control">
+  <input type="number" name="prenom" [(ngModel)]="article.prix" class="form-control">
+
+
+  <p>ajouter : </p>
+  {{article.id}}-{{article.marque}}-{{article.prix}}
+  <p>?</p>
+  <button class="btn btn-primary" (click)="add()">add</button>
+
+
+  <table>
+      <tr>
+          <td>id</td>
+          <td>marque</td>
+          <td>prix</td>
+      </tr>
+
+      <tr *ngFor="let x of tab">
+          <td>{{x.id}}</td>
+          <td>{{x.marque}}</td>
+          <td>{{x.prix}}</td>
+      </tr>
+  </table>
+
+</div>
