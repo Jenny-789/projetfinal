@@ -1,0 +1,21 @@
+
+
+
+  #message {
+    position: absolute;
+    left : 20px;
+    top  : 70px;
+  }
+
+ input, textarea {
+    font    : .9em/1.5em "handwriting", sans-serif;
+  
+    border  : none;
+    border-width: 1px;
+    padding : 0 10px;
+    margin  : 100;
+    width   : 500px;
+    border-color: rgb(167, 168, 167);
+    border-style: solid;
+    background: none;
+  }

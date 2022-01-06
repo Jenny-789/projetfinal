@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import {Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+message : string; 
+  constructor (public authService: AuthService, private router : Router) {}
 
-  constructor() { }
+  
+  //Si utilisateur pas déjà connecté on le redirige vers login 
+   ngOnInit () {
+    let isloggedin: string; 
+    let loggedUser:string;
+    isloggedin = localStorage.getItem('isloggedIn');
+    loggedUser = localStorage.getItem('loggedUser');
+    if (isloggedin!="true" || !loggedUser) 
+        this.message = ""; 
+    else
+     this.authService.setLoggedUserFromLocalStorage(loggedUser);
+  } 
 
-  ngOnInit(): void {
+
+// Deconnexion. Appel la méthode logout dans auth.service.ts et application dans app.component.html 
+  onLogout(){
+    this.authService.logout(); 
   }
-
 }
