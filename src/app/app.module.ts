@@ -8,6 +8,17 @@ import { AddClientsComponent } from './add-clients/add-clients.component';
 import { ClientsComponent } from './clients/clients.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { ProfilComponent } from './compte/profil/profil.component';
+
+import { OngletServiceComponent } from './onglet-service/onglet-service.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+
+import { CGVComponent } from './Footer/cgv/cgv.component';
+import { FooterComponent } from './Footer/footer.component';
+import { MentionsComponent } from './Footer/mentions/mentions.component';
+import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +26,16 @@ import { MenuComponent } from './menu/menu.component';
     AddClientsComponent,
     ClientsComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    ProfilComponent,
+    CGVComponent,
+    OngletServiceComponent,
+    AccueilComponent,
+    InscriptionComponent,
+    FooterComponent,
+    MentionsComponent,
+    PreAccueilComponent,
+    
   ],
   imports: [
     BrowserModule,

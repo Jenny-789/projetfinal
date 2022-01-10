@@ -1,0 +1,61 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+   
+    <style type="text/css">
+    
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #content{
+            display: flex;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+        #content img{
+            margin: auto;
+            width: 1000px;
+        }
+
+        #abs1 {
+  z-index: 5;
+  position: absolute;
+  width: 150px;
+  height: 350px;
+  top: 100px;
+  left: 500px;
+  
+}
+#abs2 {
+  z-index: 4;
+  position: absolute;
+  width: 2050px;
+  height: 3000px;
+  top: 10px;
+  left: 10px;
+  border: 1px dashed rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+}
+    </style>
+</head>
+<body>
+    <div id="abs2">
+               
+      </div>
+    <div id="abs1">
+        <div id="content"> 
+        
+        <br />
+        <br />
+            <img src="/assets/ImagesSite/logo.gif" alt="pre-accueil" routerLink="/accueil" >
+      
+        
+      </div>
+    </div>
+   
+
+    
+</body>
+</html>

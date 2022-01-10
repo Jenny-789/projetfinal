@@ -4,3 +4,17 @@
 - Module authentification / connexion 
 - Module inscription 
 
+31 Décembre / 1er Janvier
+- Création branche Service pour faire l'onglet service 
+- Modification onglet mon compte avec apparition/disparition en fonction de la connexion 
+- Créaton du dossier compte qui reprendra le profil/coordonnée/commande 
+- Test de plusieurs type de code pour rendre les champs obligatoire pour l'inscription mais echec. Reviendrait dessus plus tard 
+
+4 janvier 
+- Mise à jour inscription pour demandé les champs obligatoirement - nouveau component qui remplacera l'autre 
+-Création footer + mentions légales + cgv 
+- formulaire ok pour la partie service 
+
+5 janvier
+-Modification du code login pour ne pas être obligé de se connecter instantanément. 
+
