@@ -1,4 +1,6 @@
 export class Client {
+    
+    title : string; 
     nom : string; 
     prenom : string;
     birthday : Date; 
@@ -6,8 +8,9 @@ export class Client {
     codePostal : number;
     ville : string;   
     email : string; 
-    identifiant : string; 
+    username : string; 
     password : string; 
+    
     
     
     }

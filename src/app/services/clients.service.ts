@@ -9,10 +9,11 @@ export class ClientsService {
   clients : Client[]; 
   constructor() { 
 
-    this.clients = [{nom : "Lambert", prenom :"Jennifer", birthday : new Date("4/10/1994"), adresse : " 15 rue des angular", codePostal : 13530 , ville : "Trets", email : "bidule@gmail.com ", identifiant : "Jenny1234 ", password : "azerty123"},
+   /*  this.clients = [{title : "Mr",nom : "Lambert", prenom :"Jennifer", birthday : new Date("4/10/1994"), adresse : " 15 rue des angular", codePostal : 13530 , ville : "Trets", email : "bidule@gmail.com ", identifiant : "Jenny1234 ", password : "azerty123"},
     {nom : "Toto", prenom :"titi", birthday : new Date("4/10/1989"), adresse : "27 rue des palmiers", codePostal : 13100 , ville : "Aix en provence", email : "chouette@hotamil.fr", identifiant : "toto11", password : "abcde7890"},
   
-  ];
+  ]; */
+  
   }
 // Retourne la liste de client 
   listeClient(): Client[]{

@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators, FormControl } from
 import Validation from '../onglet-service/validation';
 import { Client } from '../model/client.model';
 import { ClientsService } from '../services/clients.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -13,7 +14,6 @@ import { ClientsService } from '../services/clients.service';
 export class InscriptionComponent implements OnInit {
   newClient = new Client; 
   message : string; 
-
 
   form: FormGroup = new FormGroup({
     title: new FormControl(''),
@@ -30,11 +30,18 @@ export class InscriptionComponent implements OnInit {
     acceptTerms: new FormControl(false),
   });
 
-
     registerForm: FormGroup;
     submitted = false;
-    constructor(private formBuilder: FormBuilder,private clientService : ClientsService) { }
+
+
+   
+
+
+    constructor(private formBuilder: FormBuilder,private clientService : ClientsService, private http : HttpClient) { }
     ngOnInit(): void {
+
+     
+
       this.form = this.formBuilder.group(
         { title: ['', Validators.required],
           nom: ['', Validators.required],
@@ -77,12 +84,14 @@ export class InscriptionComponent implements OnInit {
     // Inscription
     onSubmit(): void {
       this.submitted = true;
-      this.clientService.ajoutClient(this.newClient);
+      //this.clientService.ajoutClient(this.newClient);
       if (this.form.invalid) {
         return;
-      }else this.message = "Inscription réussi - Bienvenue parmi nous " + this.newClient.prenom ; 
+      }else { this.create();
+       }
   
       console.log(JSON.stringify(this.form.value, null, 2));
+      
     }
   
     //Remise à zero 
@@ -91,6 +100,16 @@ export class InscriptionComponent implements OnInit {
       this.form.reset();
     }
 
-   
+    create(){
+      const body = JSON.stringify(this.newClient);
+      this.http.post("http://localhost:8080/formation/rest/personnes", body, { headers: new HttpHeaders({
+        "Content-Type": "application/json",}),
+        }).subscribe(response => {
+          console.log("Inscription réussi ")
+          this.message = "Inscription réussi - Bienvenue parmi nous " + this.newClient.prenom ;
+        });
+  
+      }
     
   }
+ 
