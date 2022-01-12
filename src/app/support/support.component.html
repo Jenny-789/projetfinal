@@ -1,0 +1,123 @@
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+        
+        <div>
+            <h2>Adresse</h2>
+            <br>
+            142 Av. Francis Tonner, <br>
+            06150 Cannes
+        </div>
+        <br>
+        <div>
+            <h2>Appelez-nous</h2>
+            <br>
+            +33492284365
+        </div>
+        <br>
+        <div>
+            <h2>Support Général</h2>
+            contact@jyta.com
+        </div>
+
+    </div>
+
+     <!-- Formulaire  -->
+<div class="register-form col-lg-4">
+    <div>
+        <h2>Contactez nous :</h2>
+        </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+
+        <div>
+          <label>Nom</label>
+          <input
+            type="text"
+            formControlName="nom"
+            class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f['nom'].errors }"
+          />
+          <div *ngIf="submitted && f['nom'].errors" class="invalid-feedback">
+            <div *ngIf="f['nom'].errors['required']">Champ obligatoire</div>
+          </div>
+        </div>
+
+        <div>
+            <label>Prenom</label>
+            <input
+              type="text"
+              formControlName="prenom"
+              class="form-control" 
+              [ngClass]="{ 'is-invalid': submitted && f['prenom'].errors }"
+            />
+            <div *ngIf="submitted && f['prenom'].errors" class="invalid-feedback">
+              <div *ngIf="f['prenom'].errors['required']">Champ obligatoire</div>
+            </div>
+          </div>
+
+          <div >
+            <label>Numéro de Télephone</label>
+            <input
+              type="number"
+              formControlName="telephone"
+              class="form-control"  
+              [ngClass]="{ 'is-invalid': submitted && f['telephone'].errors }"
+            />
+            <div *ngIf="submitted && f['telephone'].errors" class="invalid-feedback">
+              <div *ngIf="f['telephone'].errors['required']">Champ obligatoire</div>
+            
+                <div *ngIf="f['telephone'].errors['minlength']">
+                    Le numéro de téléphone doit contenir 10 caractères 
+                </div>
+                <div *ngIf="f['telephone'].errors['maxlength']">
+                    Le numéro de téléphone doit contenir 10 caractères
+                </div>
+            </div>
+          </div>
+    
+        <div >
+          <label>Email</label>
+          <input
+            type="text"
+            formControlName="email"
+            class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+          />
+          <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">Champ obligatoire</div>
+            <div *ngIf="f['email'].errors['email']">Email non valide</div>
+          </div>
+        </div>
+  
+        <div >
+            <label for="msg">Message </label>
+            <textarea  type="text"
+            formControlName="message"
+            class="form-control "
+            [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"></textarea>
+      
+            <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+              <div *ngIf="f['message'].errors['required']">Champ obligatoire</div>
+            </div>
+          </div>
+    
+  
+        <div class="form-group">
+            <button (click)="onSubmit()" class="btn btn-success"  value="Sign Up" >Envoyer</button>
+        </div>
+
+
+        
+
+
+        <div> <h5>
+            {{message}}
+            
+                </h5>
+            
+            
+                </div>
+      </form>
+    </div>
+</div>
