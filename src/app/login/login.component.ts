@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { User } from '../model/user.model';
 import { Router } from '@angular/router';
+import { Client } from '../model/client.model';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user = new User();
+  client = new Client();
   erreur = 0;
     constructor(private authService : AuthService,
       private router: Router) { }
@@ -20,8 +21,8 @@ export class LoginComponent implements OnInit {
     
     // Connexion Login 
     onLoggedin(){
-      console.log(this.user); 
-      let isValidUser: Boolean = this.authService.SignIn(this.user); // Déclare une variable local avec let qui recoit le résultat de la méthode signIn dans la classe auth.service
+      console.log(this.client); 
+      let isValidUser: Boolean = this.authService.SignIn(this.client); // Déclare une variable local avec let qui recoit le résultat de la méthode signIn dans la classe auth.service
       if (isValidUser) // Si valideUser est true on continue sinon on met une alerte 
         this.router.navigate(['/']);
       else
