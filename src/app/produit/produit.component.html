@@ -61,27 +61,28 @@
   </div>
 
   <!------------------------- FILTRE  ------------------------->
-  <section>
-    <span>Filtrer</span>
-    <button (click)="getArticle()">Reinitialiser</button>
-    <!-- Par nom -->
-    <article>
-      <h4>Nom</h4>
-      <input type="text" [(ngModel)]="nom" />
-      <button (click)="searchByNom()">Trouver</button>
-    </article>
-    <!-- Par prix -->
-    <article>
-      <h4>Prix</h4>
-      Prix minimum<input type="number" [(ngModel)]="min" /> Prix maximum<input
-        type="number"
-        [(ngModel)]="max"
-      />
-      <button (click)="searchByPrix()">Trouver</button>
-    </article>
+  <div class="flex">
+    <section class="sect-filtre">
+      <span>Filtrer</span>
+      <button (click)="getArticle()">Reinitialiser</button>
+      <!-- Par nom -->
+      <article>
+        <h4>Nom</h4>
+        <input type="text" [(ngModel)]="nom" />
+        <button (click)="searchByNom()">Trouver</button>
+      </article>
+      <!-- Par prix -->
+      <article>
+        <h4>Prix</h4>
+        Prix minimum<input type="number" [(ngModel)]="min" /> Prix maximum<input
+          type="number"
+          [(ngModel)]="max"
+        />
+        <button (click)="searchByPrix()">Trouver</button>
+      </article>
 
-    <!-------------------------- CHECKBOX ---------------------->
-    <!-- <article>
+      <!-------------------------- CHECKBOX ---------------------->
+      <!-- <article>
       <div class="form-check">
         <label class="form-check-label">
           <input
@@ -133,22 +134,33 @@
         </label>
       </div>
     </article> -->
-  </section>
+    </section>
 
-  <!------------------------- LISTE PRODUITS  ------------------------->
+    <!------------------------- LISTE PRODUITS  ------------------------->
 
-  <section class="sect-produit">
-    <!-- Articles produit -->
-    <article class="art-produit" *ngFor="let pist of myList">
-      <img src="{{ pist.lienImage }}" alt="Ecran 1" class="img-produit" />
-      <span class="span-produit">{{ pist.nom }}</span>
-      <p>{{ pist.description }}</p>
-      <p class="prix-produit">A partir de {{ pist.prix }}€</p>
-      <div class="container mt-3">
-        <button type="button" class="btn btn-outline-info">
-          Ajouter au panier
-        </button>
-      </div>
-    </article>
-  </section>
+    <section class="sect-produit">
+      <!-- Articles produit -->
+      <article class="art-produit" *ngFor="let pist of myList">
+        <img
+          src="{{ pist.lienImage }}"
+          alt="Ecran 1"
+          class="img-produit"
+          [(ngModel)]="a.lienImage"
+        />
+        <span class="span-produit" [(ngModel)]="a.nom">{{ pist.nom }}</span>
+        <p [(ngModel)]="a.description">{{ pist.description }}</p>
+        <p class="prix-produit" [(ngModel)]="a.prix">
+          A partir de {{ pist.prix }}€
+        </p>
+        <div class="container mt-3">
+          <button type="button" class="btn btn-outline-info" (click)="add()">
+            Ajouter au panier
+          </button>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <br />
+  {{ message }}
 </body>

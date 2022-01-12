@@ -15,6 +15,22 @@ body {
 
 /****************************** PRODUITS ****************************/
 
+.flex {
+  display: flex;
+  margin-top: 70px;
+  margin-left: 50px;
+  margin-bottom: 70px;
+}
+
+/* Filtre */
+.sect-filtre {
+  background-color: white;
+  margin-right: 30px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+/* Produit */
+
 .sect-produit {
   display: flex;
   justify-content: space-evenly;
@@ -31,7 +47,7 @@ body {
   padding-bottom: 30px;
   padding-top: 20px;
   margin-bottom: 40px;
-  width: 30%;
+  width: 35%;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
