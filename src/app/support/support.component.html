@@ -1,12 +1,11 @@
-<div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-4">
+<div class="div-global">
+    <div class="div-adresse" >
         
         <div>
-            <h2>Adresse</h2>
+            <h3>Adresse</h3>
             <br>
-            142 Av. Francis Tonner, <br>
-            06150 Cannes
+            <p> Av. Francis Tonner, <br>
+            06100 Nice</p>
         </div>
         <br>
         <div>
@@ -17,18 +16,18 @@
         <br>
         <div>
             <h2>Support Général</h2>
-            contact@jyta.com
+            contact@jyta.fr
         </div>
 
     </div>
 
      <!-- Formulaire  -->
-<div class="register-form col-lg-4">
-    <div>
+    <div class="div-formulaire">
+      <div>
         <h2>Contactez nous :</h2>
-        </div>
+      </div>
 
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" >
 
         <div>
           <label>Nom</label>
@@ -103,42 +102,36 @@
           </div>
     
   
-        <div class="form-group">
+        <!-- <div class="form-group">
             <button (click)="onSubmit()" class="btn btn-success"  value="Sign Up" >Envoyer</button>
+        </div> -->
+
+        <!-- Button trigger modal -->
+        <div class="form-group">
+          <button (click)="onSubmit()" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+            Envoyer
+          </button>
         </div>
 
-        <div class="container">
-          <h2>Modal Example</h2>
-          <!-- Button to Open the Modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-            Open modal
-          </button>
-        
-          <!-- The Modal -->
-          <div class="modal" id="myModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-              
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <h4 class="modal-title">Modal Heading</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                
-                <!-- Modal body -->
-                <div class="modal-body">
-                  Modal body..
-                </div>
-                
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-                
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
               </div>
             </div>
           </div>
-          
         </div>
      
         <div> <h5>

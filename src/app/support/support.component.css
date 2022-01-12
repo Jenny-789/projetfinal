@@ -1,0 +1,18 @@
+.div-global{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.div-adresse{
+    width: 500px;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+    background-image: url("/assets/ImagesSite/image_background.jpg");
+
+}
+
+p{
+    font-size: 0.8rem;
+}
