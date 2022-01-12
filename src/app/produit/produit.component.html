@@ -140,20 +140,22 @@
 
     <section class="sect-produit">
       <!-- Articles produit -->
-      <article class="art-produit" *ngFor="let pist of myList">
+      
+      <article class="art-produit" *ngFor="let pist of myList; let iteration = index">
+        <input type="hidden" value="{{ iteration }}">
         <img
           src="{{ pist.lienImage }}"
           alt="Ecran 1"
           class="img-produit"
-          [(ngModel)]="a.lienImage"
+         
         />
-        <span class="span-produit" [(ngModel)]="a.nom">{{ pist.nom }}</span>
-        <p [(ngModel)]="a.description">{{ pist.description }}</p>
-        <p class="prix-produit" [(ngModel)]="a.prix">
+        <span class="span-produit" >{{ pist.nom }} {{ iteration }}</span>
+        <p>{{ pist.description }}</p>
+        <p class="prix-produit" >
           A partir de {{ pist.prix }}€
         </p>
         <div class="container mt-3">
-          <button type="button" class="btn btn-outline-info" (click)="add()">
+          <button type="button" class="btn btn-outline-info" value="{{ iteration }}" (click)="add(iteration)">
             Ajouter au panier
           </button>
         </div>

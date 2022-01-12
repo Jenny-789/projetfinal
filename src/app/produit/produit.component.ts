@@ -63,21 +63,25 @@ export class ProduitComponent implements OnInit {
       );
   }
 
-  add() {
-    let x: Article = new Article();
+  add(i) { 
+    
+    console.log(i);
+    let x: Article = this.myList[i];
+    
+    // let x: Article = new Article();
     // x.id = this.a.id;
-    x.nom = this.a.nom;
-    x.prix = this.a.prix;
-    x.description = this.a.description;
-    x.lienImage = this.a.lienImage;
-    console.log(this.a);
+    // x.nom = this.a.nom;
+    // x.prix = this.a.prix;
+    // x.description = this.a.description;
+    // x.lienImage = this.a.lienImage;
+    // console.log(this.a);
     this.tab.push(x);
 
     let str: string = JSON.stringify(this.tab);
     sessionStorage.setItem('panier', str);
-    let str2: string = JSON.stringify(x);
-    console.log(str2);
+    // let str2: string = JSON.stringify(x);
+    // console.log(str2);
 
-    this.message = sessionStorage.getItem('panier');
+    //this.message = sessionStorage.getItem('panier');
   }
 }

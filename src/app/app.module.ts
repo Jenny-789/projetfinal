@@ -36,7 +36,7 @@ import { ProduitComponent } from './produit/produit.component';
     FooterComponent,
     MentionsComponent,
     PreAccueilComponent,
-    ProduitComponent,
+    ProduitComponent
     
   ],
   imports: [
