@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+} from '@angular/forms';
 import Validation from '../onglet-service/validation';
 import { Client } from '../model/client.model';
 import { ClientsService } from '../services/clients.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
-  styleUrls: ['./inscription.component.css']
+  styleUrls: ['./inscription.component.css'],
 })
 export class InscriptionComponent implements OnInit {
-  newClient = new Client;
+  newClient = new Client();
   message: string;
 
   form: FormGroup = new FormGroup({
@@ -32,16 +37,12 @@ export class InscriptionComponent implements OnInit {
 
   registerForm: FormGroup;
   submitted = false;
-
-
-
-
-
-  constructor(private formBuilder: FormBuilder, private clientService: ClientsService, private http: HttpClient) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private clientService: ClientsService,
+    private http: HttpClient
+  ) {}
   ngOnInit(): void {
-
-
-
     this.form = this.formBuilder.group(
       {
         title: ['', Validators.required],
@@ -77,7 +78,7 @@ export class InscriptionComponent implements OnInit {
     );
   }
 
-  // Evite d'avoir de devoir noter tout le chemin dans le html, à la place j'y met juste f 
+  // Evite d'avoir de devoir noter tout le chemin dans le html, à la place j'y met juste f
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
@@ -91,6 +92,7 @@ export class InscriptionComponent implements OnInit {
     } else {
       this.create();
     }
+
 
     console.log(JSON.stringify(this.form.value, null, 2));
 

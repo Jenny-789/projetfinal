@@ -18,6 +18,7 @@ import { CGVComponent } from './Footer/cgv/cgv.component';
 import { FooterComponent } from './Footer/footer.component';
 import { MentionsComponent } from './Footer/mentions/mentions.component';
 import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
+import { ProduitComponent } from './produit/produit.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
     FooterComponent,
     MentionsComponent,
     PreAccueilComponent,
+    ProduitComponent,
     
   ],
   imports: [
