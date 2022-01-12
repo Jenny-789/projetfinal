@@ -46,7 +46,6 @@ export class SupportComponent implements OnInit {
       return;
     else
       this.message="Message envoyé"
-      // faire un pop-up qui dit que c'est bien parti
   }
 
 }
