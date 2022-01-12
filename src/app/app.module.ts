@@ -19,6 +19,7 @@ import { FooterComponent } from './Footer/footer.component';
 import { MentionsComponent } from './Footer/mentions/mentions.component';
 import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
 import { ProduitComponent } from './produit/produit.component';
+import { CommandeComponent } from './commande/commande.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ProduitComponent } from './produit/produit.component';
     FooterComponent,
     MentionsComponent,
     PreAccueilComponent,
-    ProduitComponent
+    ProduitComponent,
+    CommandeComponent
     
   ],
   imports: [

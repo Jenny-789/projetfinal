@@ -10,6 +10,7 @@ import { CGVComponent } from './Footer/cgv/cgv.component';
 import { MentionsComponent } from './Footer/mentions/mentions.component';
 import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
 import { ProduitComponent } from './produit/produit.component';
+import { CommandeComponent } from './commande/commande.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'mentions', component: MentionsComponent },
   { path: 'produit', component: ProduitComponent },
   { path: 'JYTA', component: PreAccueilComponent },
+  { path: 'commande', component: CommandeComponent }
 ];
 
 @NgModule({
