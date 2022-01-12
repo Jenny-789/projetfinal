@@ -12,7 +12,7 @@ message : string;
   constructor (public authService: AuthService, private router : Router) {}
 
   
-  //Si utilisateur pas déjà connecté on le redirige vers login 
+  //Si utilisateur pas déjà connecté on le redirige vers login - Permet de passer de false à true à la connexion 
    ngOnInit () {
     let isloggedin: string; 
     let loggedUser:string;

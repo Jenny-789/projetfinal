@@ -12,7 +12,7 @@ import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
 
 
 const routes: Routes = [
-  { path: "", redirectTo:"YUJET", pathMatch:"full" },
+  { path: "", redirectTo:"accueil", pathMatch:"full" },
   { path: 'login', component: LoginComponent },
   { path: 'clients', component: ClientsComponent },
   { path: 'inscription', component: InscriptionComponent },
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'cgv', component: CGVComponent },
   { path: 'mentions', component: MentionsComponent },
-  { path: 'YUJET', component: PreAccueilComponent },
+  { path: 'JYTA', component: PreAccueilComponent },
 ];
 
 @NgModule({
