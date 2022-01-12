@@ -1,5 +1,5 @@
 
-
+<!------------- Première Partie ------------>
   <div style=" position:relative;height:400px">
     <div style="z-index:1">
        <img src="/assets/ImagesSite/server.jpg">
@@ -26,19 +26,42 @@ Contactez-nous ! Un conseiller se chargera de prendre le temps de vous répondre
     </div>
 </div>
 <br><br>
-  <!-- Formulaire  -->
+
+<!------------- Seconde Partie ------------>
+<section class="sect1">
+ 
+  <!-- Nos services -->
+  <div class="flex-h">
+    <div class="flex-engage">
+      <h3 class="h3-engage">Nos services </h3>
+    </div>
+    <div>
+      <i class="fas fa-cog"></i>
+      <h4>Environnement utilisateur</h4>
+      <p class="engage-p">
+        Une expérience intégrée au plus proche des besoins des collaborateurs
+      </p>
+      <h4>Cloud, Infrastructure et Hybridation </h4>
+      <p class="engage-p">un SI agile toujours aligné sur les enjeux métiers</p>
+      <h4>Apps, Cloud & Data</h4>
+      <p class="engage-p">Des applications performantes, au coeur du développement de l'entreprise</p>
+      <h4>Cybersécurité</h4>
+      <p class="engage-p">L'anticipation des risques pour sécuriser les données et ressources</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Partie Formulaire  -->
 <div class="register-form">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <div class="col-sm-2 col-md-2 col-lg-2">
       <label>Civilite</label>
       <select formControlName="title" 
-      class="form-control" 
+      class="form-control" [(ngModel)]="newFormulaire.title"
       [ngClass]="{ 'is-invalid': submitted && f['title'].errors }">
-       
           <option value="Monsieur">Monsieur</option>
           <option value="Madame">Madame</option>
-          
       </select>
       <div *ngIf="submitted &&  f['title'].errors" class="invalid-feedback">
           <div *ngIf=" f['title'].errors['required']">Champ obligatoire</div>
@@ -51,9 +74,8 @@ Contactez-nous ! Un conseiller se chargera de prendre le temps de vous répondre
     <input
       type="text"
       formControlName="nom"
-      class="form-control"  
-      [ngClass]="{ 'is-invalid': submitted && f['nom'].errors }"
-    />
+      class="form-control"  [(ngModel)]="newFormulaire.nom"
+      [ngClass]="{ 'is-invalid': submitted && f['nom'].errors }"/>
     <div *ngIf="submitted && f['nom'].errors" class="invalid-feedback">
       <div *ngIf="f['nom'].errors['required']">Champ obligatoire</div>
     </div>
@@ -64,9 +86,8 @@ Contactez-nous ! Un conseiller se chargera de prendre le temps de vous répondre
       <input
         type="text"
         formControlName="prenom"
-        class="form-control"  
-        [ngClass]="{ 'is-invalid': submitted && f['prenom'].errors }"
-      />
+        class="form-control"  [(ngModel)]="newFormulaire.prenom"
+        [ngClass]="{ 'is-invalid': submitted && f['prenom'].errors }"/>
       <div *ngIf="submitted && f['prenom'].errors" class="invalid-feedback">
         <div *ngIf="f['prenom'].errors['required']">Champ obligatoire</div>
       </div>
@@ -77,23 +98,17 @@ Contactez-nous ! Un conseiller se chargera de prendre le temps de vous répondre
       <input
         type="text"
         formControlName="societe"
-        class="form-control"  
-        [ngClass]="{ 'is-invalid': submitted && f['societe'].errors }"
-      />
-      <div *ngIf="submitted && f['societe'].errors" class="invalid-feedback">
-        <div *ngIf="f['societe'].errors['required']">Champ obligatoire</div>
-      </div>
-    </div>
+        class="form-control"  [(ngModel)]="newFormulaire.societe"
+        [ngClass]="{ 'is-invalid': submitted && f['societe'].errors }"/>
+          </div>
   
     <div class="col-sm-5 col-md-5 col-lg-5">
         <label>N°Siret</label>
         <input
           type="text"
           formControlName="nsiret"
-          class="form-control"  
-          [ngClass]="{ 'is-invalid': submitted && f['nsiret'].errors }"
-        />
-       
+          class="form-control"  [(ngModel)]="newFormulaire.nsiret"
+          [ngClass]="{ 'is-invalid': submitted && f['nsiret'].errors }"/>
       </div>
 
       <div class="col-sm-5 col-md-5 col-lg-5">
@@ -101,9 +116,8 @@ Contactez-nous ! Un conseiller se chargera de prendre le temps de vous répondre
         <input
           type="text"
           formControlName="telephone"
-          class="form-control"  
-          [ngClass]="{ 'is-invalid': submitted && f['telephone'].errors }"
-        />
+          class="form-control"  [(ngModel)]="newFormulaire.telephone"
+          [ngClass]="{ 'is-invalid': submitted && f['telephone'].errors }"/>
         <div *ngIf="submitted && f['telephone'].errors" class="invalid-feedback">
           <div *ngIf="f['telephone'].errors['required']">Champ obligatoire</div>
         </div>
@@ -114,31 +128,26 @@ Contactez-nous ! Un conseiller se chargera de prendre le temps de vous répondre
         <input
           type="text"
           formControlName="email"
-          class="form-control  "
-          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
-        />
+          class="form-control  " [(ngModel)]="newFormulaire.email"
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"/>
         <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
           <div *ngIf="f['email'].errors['required']">Email is required</div>
           <div *ngIf="f['email'].errors['email']">Email is invalid</div>
         </div>
       </div>
 
-    
       <div class="col-sm-2 col-md-2 col-lg-2">
         <label>Objet</label>
         <select formControlName="objet" 
-        class="form-control" 
+        class="form-control"  [(ngModel)]="newFormulaire.objet"
         [ngClass]="{ 'is-invalid': submitted && f['objet'].errors }">
-         
             <option value="1">Demande d'équipements</option>
             <option value="2">Demande de services</option>
             <option value="3">Solution Microsoft</option>
             <option value="4">Solution Apple</option>
             <option value="5">Solution Linux</option>
             <option value="6">Solution de mobilité</option>
-            <option value="7">Autres</option>
-           
-            
+            <option value="7">Autres</option> 
         </select>
         <div *ngIf="submitted &&  f['objet'].errors" class="invalid-feedback">
             <div *ngIf=" f['objet'].errors['required']">Champ obligatoire</div>
@@ -149,24 +158,20 @@ Contactez-nous ! Un conseiller se chargera de prendre le temps de vous répondre
       <label for="msg">Message </label>
       <textarea  type="text"
       formControlName="message"
-      class="form-control "
+      class="form-control " [(ngModel)]="newFormulaire.message"
       [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"></textarea>
-      
       <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
         <div *ngIf="f['message'].errors['required']">Champ obligatoire</div>
       </div>
     </div>
 
-  
-
     <br><br>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-        
+        <button (click)= "onSubmit()" class="btn btn-primary">Envoyer</button>
       </div>
     </form>
 
-
+    {{message}}
 
   </div> 
  

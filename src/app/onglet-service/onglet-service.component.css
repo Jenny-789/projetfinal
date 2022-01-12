@@ -1,6 +1,6 @@
 
 
-
+/* Première partie */
   #message {
     position: absolute;
     left : 20px;
@@ -19,3 +19,49 @@
     border-style: solid;
     background: none;
   }
+
+
+
+  /*Seconde partie*/ 
+.sect1 {
+  display: flex;
+  margin-top: 30px;
+}
+
+        /* Nos engagements */
+.flex-h {
+  display: flex;
+  justify-content: space-around;
+  height: 450px;
+  margin-top: 50px;
+  margin-right: 80px;
+  padding: 30px;
+  background-color: #f5f6f8;
+}
+
+.flex-engage {
+  margin-right: 50px;
+}
+
+.h3-engage {
+  margin-top: 80px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.img-main {
+  height: 150px;
+  weight: 2000px;
+}
+
+h4 {
+  color: #23416c;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.engage-p {
+  font-size: 0.8rem;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #c4c5c7;
+}
