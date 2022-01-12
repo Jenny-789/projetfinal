@@ -9,10 +9,10 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { CGVComponent } from './Footer/cgv/cgv.component';
 import { MentionsComponent } from './Footer/mentions/mentions.component';
 import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
-
+import { ProduitComponent } from './produit/produit.component';
 
 const routes: Routes = [
-  { path: "", redirectTo:"YUJET", pathMatch:"full" },
+  { path: '', redirectTo: 'YUJET', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'clients', component: ClientsComponent },
   { path: 'inscription', component: InscriptionComponent },
@@ -21,10 +21,11 @@ const routes: Routes = [
   { path: 'cgv', component: CGVComponent },
   { path: 'mentions', component: MentionsComponent },
   { path: 'YUJET', component: PreAccueilComponent },
+  { path: 'produit', component: ProduitComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
