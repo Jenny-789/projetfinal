@@ -3,6 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { User } from '../model/user.model';
 import { Router } from '@angular/router';
 import { Client } from '../model/client.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -11,22 +12,34 @@ import { Client } from '../model/client.model';
 })
 export class LoginComponent implements OnInit {
   client = new Client();
+
+  username: String
+  password: String
+  message: String
   erreur = 0;
-    constructor(private authService : AuthService,
-      private router: Router) { }
-  
-    ngOnInit(): void {
-    }
-  
-    
-    // Connexion Login 
-    onLoggedin(){
-      console.log(this.client); 
-      let isValidUser: Boolean = this.authService.SignIn(this.client); // Déclare une variable local avec let qui recoit le résultat de la méthode signIn dans la classe auth.service
-      if (isValidUser) // Si valideUser est true on continue sinon on met une alerte 
-        this.router.navigate(['/']);
-      else
-        //alert('Login ou mot de passe incorrecte!');
-        this.erreur = 1; 
-                }
+  public isloggedIn: Boolean = false;
+
+  constructor(public authService: AuthService, private router: Router, private http: HttpClient) { }
+
+  ngOnInit(): void {
+  }
+
+  login() {
+    this.http.get<Client>("http://localhost:8080/formation/rest/personnes/" + this.username + "/" + this.password).
+      subscribe(response => {
+        this.client = response;
+        if (this.client != null) {
+          this.message = this.client.nom + " " + this.client.prenom + " login.ts";
+          document.location.assign("http://localhost:4200/accueil"); 
+          this.isloggedIn = true;
+          
+          localStorage.setItem('loggedUser', JSON.stringify(this.client));
+          localStorage.setItem('isloggedIn', String(this.isloggedIn));
+        } else this.erreur = 1;
+
+      });
+
+
+  }
+
 }
