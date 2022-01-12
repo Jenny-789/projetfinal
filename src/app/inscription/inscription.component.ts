@@ -37,7 +37,6 @@ export class InscriptionComponent implements OnInit {
 
   registerForm: FormGroup;
   submitted = false;
-
   constructor(
     private formBuilder: FormBuilder,
     private clientService: ClientsService,
@@ -58,8 +57,8 @@ export class InscriptionComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(6),
-            Validators.maxLength(20),
-          ],
+            Validators.maxLength(20)
+          ]
         ],
         email: ['', [Validators.required, Validators.email]],
         password: [
@@ -67,14 +66,14 @@ export class InscriptionComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(6),
-            Validators.maxLength(40),
-          ],
+            Validators.maxLength(40)
+          ]
         ],
         confirmPassword: ['', Validators.required],
-        acceptTerms: [false, Validators.requiredTrue],
+        acceptTerms: [false, Validators.requiredTrue]
       },
       {
-        validators: [Validation.match('password', 'confirmPassword')],
+        validators: [Validation.match('password', 'confirmPassword')]
       }
     );
   }
@@ -94,10 +93,12 @@ export class InscriptionComponent implements OnInit {
       this.create();
     }
 
+
     console.log(JSON.stringify(this.form.value, null, 2));
+
   }
 
-  //Remise à zero
+  //Remise à zero 
   onReset(): void {
     this.submitted = false;
     this.form.reset();
@@ -105,16 +106,15 @@ export class InscriptionComponent implements OnInit {
 
   create() {
     const body = JSON.stringify(this.newClient);
-    this.http
-      .post('http://localhost:8080/formation/rest/personnes', body, {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-        }),
-      })
-      .subscribe((response) => {
-        console.log('Inscription réussi ');
-        this.message =
-          'Inscription réussi - Bienvenue parmi nous ' + this.newClient.prenom;
-      });
+    this.http.post("http://localhost:8080/formation/rest/personnes", body, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+      }),
+    }).subscribe(response => {
+      console.log("Inscription réussi ")
+      this.message = "Inscription réussi - Bienvenue parmi nous " + this.newClient.prenom;
+    });
+
   }
+
 }
