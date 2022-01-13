@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Article } from '../model/article';
+import { Panier } from '../model/panier';
 
 @Component({
   selector: 'app-commande',
@@ -10,6 +11,7 @@ import { Article } from '../model/article';
 export class CommandeComponent implements OnInit {
 
 tab: Array<Article> = new Array<Article>();
+panier: Panier;
 message: string;
   constructor() { }
 
@@ -20,6 +22,13 @@ message: string;
   getListArticleFroSession(){
     this.message = sessionStorage.getItem('panier');
     this.tab = JSON.parse(this.message);
+  }
+
+  getListArticleFroSessionBis(){
+    this.message = sessionStorage.getItem('panierbis');
+    this.panier = JSON.parse(this.message);
+    console.log(this.panier);
+    
   }
 
 }
