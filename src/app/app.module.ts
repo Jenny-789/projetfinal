@@ -18,6 +18,7 @@ import { CGVComponent } from './Footer/cgv/cgv.component';
 import { FooterComponent } from './Footer/footer.component';
 import { MentionsComponent } from './Footer/mentions/mentions.component';
 import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
+import { SupportComponent } from './support/support.component';
 import { ProduitComponent } from './produit/produit.component';
 import { CommandeComponent } from './commande/commande.component';
 
@@ -37,6 +38,7 @@ import { CommandeComponent } from './commande/commande.component';
     FooterComponent,
     MentionsComponent,
     PreAccueilComponent,
+    SupportComponent,
     ProduitComponent,
     CommandeComponent
     

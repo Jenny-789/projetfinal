@@ -41,7 +41,7 @@ export class InscriptionComponent implements OnInit {
     private formBuilder: FormBuilder,
     private clientService: ClientsService,
     private http: HttpClient
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
@@ -86,14 +86,11 @@ export class InscriptionComponent implements OnInit {
   // Inscription
   onSubmit(): void {
     this.submitted = true;
-    //this.clientService.ajoutClient(this.newClient);
     if (this.form.invalid) {
       return;
     } else {
       this.create();
     }
-
-
     console.log(JSON.stringify(this.form.value, null, 2));
 
   }
