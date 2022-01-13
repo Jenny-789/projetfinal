@@ -64,7 +64,6 @@ export class OngletServiceComponent implements OnInit {
       this.createformulaire();
     }
 
-    console.log(JSON.stringify(this.form.value, null, 2));
   }
 
   createformulaire() {

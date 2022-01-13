@@ -12,35 +12,35 @@ export class FooterComponent implements OnInit {
 
   newsletter = new Newsletter();
   message : String; 
-  submitted = false;
+  // email : String; 
+  // submitted = false;
 
-  form: FormGroup = new FormGroup({
-    email: new FormControl('')
-  });
+  // news: FormGroup = new FormGroup({
+  //   email: new FormControl(''),
+  
+  // });
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group(
-      {
-        email: [''],
-      });
+    // this.news = this.formBuilder.group(
+    //   {
+    //     email: [''],
+      
+    //   });
   }
 
-  get f(): { [key: string]: AbstractControl } {
-    return this.form.controls;
-  }
-  onSubmit(): void {
-    this.submitted = true;
-
-    if (this.form.invalid) {
-      return;
-    } else {
-      this.newslettersave();
-    }
-
-    console.log(JSON.stringify(this.form.value, null, 2));
-  }
+  // get f(): { [key: string]: AbstractControl } {
+  //   return this.news.controls;
+  //}
+  // onSubmit(): void {
+  //   this.submitted = true;
+  //   if (this.email == null) {
+  //     return;
+  //   } else {
+  //     this.newslettersave();
+  //   }
+  // }
 
   newslettersave() {
     const body = JSON.stringify(this.newsletter);
