@@ -64,10 +64,21 @@ export class ProduitComponent implements OnInit {
   }
 
   add(i) { 
-    
+    this.tab = JSON.parse(sessionStorage.getItem('panier'));
     console.log(i);
     let x: Article = this.myList[i];
-    
+    let bool = false;
+    for (let index = 0; index < this.myList.length; index++) {
+      if(this.tab != null && this.tab[index].nom === x.nom) {
+        bool = true;
+        this.tab[index].quantite ++;
+        break;
+      }
+    }
+    if (!bool) {
+      x.quantite = 1;
+      this.tab.push(x);
+    }
     // let x: Article = new Article();
     // x.id = this.a.id;
     // x.nom = this.a.nom;
@@ -75,8 +86,7 @@ export class ProduitComponent implements OnInit {
     // x.description = this.a.description;
     // x.lienImage = this.a.lienImage;
     // console.log(this.a);
-    this.tab.push(x);
-
+    
     let str: string = JSON.stringify(this.tab);
     sessionStorage.setItem('panier', str);
     // let str2: string = JSON.stringify(x);

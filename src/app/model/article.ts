@@ -4,4 +4,5 @@ export class Article {
   prix: number;
   description: string;
   lienImage: string;
+  quantite : number;
 }
