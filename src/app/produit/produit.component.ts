@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Article } from '../model/article';
 
 @Component({
   selector: 'app-produit',
@@ -11,12 +12,13 @@ export class ProduitComponent implements OnInit {
   nom: string;
   min: number;
   max: number;
+  a: Article = new Article();
+  tab: Array<Article> = new Array<Article>();
+  message: string;
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    console.log('Test 1');
     this.getArticle();
-    console.log('Test 2');
   }
 
   getArticle() {
@@ -59,5 +61,37 @@ export class ProduitComponent implements OnInit {
           console.log('erreur');
         }
       );
+  }
+
+  add(i) { 
+    this.tab = JSON.parse(sessionStorage.getItem('panier'));
+    console.log(i);
+    let x: Article = this.myList[i];
+    let bool = false;
+    for (let index = 0; index < this.myList.length; index++) {
+      if(this.tab != null && this.tab[index].nom === x.nom) {
+        bool = true;
+        this.tab[index].quantite ++;
+        break;
+      }
+    }
+    if (!bool) {
+      x.quantite = 1;
+      this.tab.push(x);
+    }
+    // let x: Article = new Article();
+    // x.id = this.a.id;
+    // x.nom = this.a.nom;
+    // x.prix = this.a.prix;
+    // x.description = this.a.description;
+    // x.lienImage = this.a.lienImage;
+    // console.log(this.a);
+    
+    let str: string = JSON.stringify(this.tab);
+    sessionStorage.setItem('panier', str);
+    // let str2: string = JSON.stringify(x);
+    // console.log(str2);
+
+    //this.message = sessionStorage.getItem('panier');
   }
 }

@@ -11,6 +11,7 @@ import { MentionsComponent } from './Footer/mentions/mentions.component';
 import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
 import { SupportComponent } from './support/support.component';
 import { ProduitComponent } from './produit/produit.component';
+import { CommandeComponent } from './commande/commande.component';
 
 const routes: Routes = [
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'mentions', component: MentionsComponent },
   { path: 'support', component: SupportComponent },
   { path: 'produit', component: ProduitComponent },
+  { path: 'commande', component: CommandeComponent }
   { path: 'JYTA', component: PreAccueilComponent }
 ];
 
