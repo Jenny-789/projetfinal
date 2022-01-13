@@ -9,6 +9,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { CGVComponent } from './Footer/cgv/cgv.component';
 import { MentionsComponent } from './Footer/mentions/mentions.component';
 import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
+import { SupportComponent } from './support/support.component';
 import { ProduitComponent } from './produit/produit.component';
 
 const routes: Routes = [
@@ -21,8 +22,9 @@ const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'cgv', component: CGVComponent },
   { path: 'mentions', component: MentionsComponent },
+  { path: 'support', component: SupportComponent },
   { path: 'produit', component: ProduitComponent },
-  { path: 'JYTA', component: PreAccueilComponent },
+  { path: 'JYTA', component: PreAccueilComponent }
 ];
 
 @NgModule({
