@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'mentions', component: MentionsComponent },
   { path: 'support', component: SupportComponent },
   { path: 'produit', component: ProduitComponent },
-  { path: 'commande', component: CommandeComponent }
+  { path: 'commande', component: CommandeComponent },
   { path: 'JYTA', component: PreAccueilComponent }
 ];
 
