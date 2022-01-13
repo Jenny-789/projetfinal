@@ -22,6 +22,7 @@ export class SupportComponent implements OnInit {
   submitted = false;
   registerForm: FormGroup;
 
+
   constructor(private formBuilder: FormBuilder,private http :HttpClient) { }
 
   ngOnInit(): void {
@@ -34,6 +35,8 @@ export class SupportComponent implements OnInit {
         email: ['', [Validators.required, Validators.email]]
       },
     );
+
+   
   }
 
   get f(): { [key: string]: AbstractControl } {
@@ -48,4 +51,9 @@ export class SupportComponent implements OnInit {
       this.message="Message envoyé"
   }
 
+
+  reloadCurrentPage(){
+
+    document.location.assign("http://localhost:4200/accueil"); 
+  }
 }
