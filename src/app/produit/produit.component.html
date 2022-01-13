@@ -93,17 +93,41 @@
     </section>
 
     <!------------------------- LISTE PRODUITS  ------------------------->
-
     <section class="sect-produit">
       <!-- Articles produit -->
 
+      <article
+        class="art-produit"
+        *ngFor="let pist of myList; let iteration = index"
+      >
+        <input type="hidden" value="{{ iteration }}" />
+        <img src="{{ pist.lienImage }}"  alt="Ecran 1" class="img-produit" />
+        <span class="span-produit">{{ pist.nom }}</span>
+        <p>{{pist.description}}</p>
+        <p class="prix-produit">A partir de {{pist.prix}}€</p>
+        <div class="container mt-3">
+          <button type="submit" class="btn btn-outline-info"   routerLink="/article/{{pist.id}}"value="{{ iteration }}" >
+En savoir plus          </button> 
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <br />
+
+
+
+
+    <!-- <section class="sect-produit">
+     Articles produit
+
       <article class="art-produit" *ngFor="let pist of myList; let iteration = index" >
         <input type="hidden" value="{{ iteration }}" >
-        <!-- <form (ngSubmit)="addTer()"> -->
+         <form (ngSubmit)="addTer()"> -->
           <!-- <form #signupForm="ngForm" (ngSubmit)="addTer(signupForm)"> -->
           <!-- <input type="text" name="nom" id="nom" value="{{ pist.nom }}" ngModel>
           <input type="text" name="prix" id="prix" value="{{ pist.prix }}" ngModel>
-          <input type="text" name="test" id="test" value="bonjour" ngModel> -->
+          <input type="text" name="test" id="test" value="bonjour" ngModel>
             
           <input type="text" name="nom" id="nom" value="{{ myList[iteration].nom }}">
           <input type="text" name="prix" id="prix" value="{{ myList[iteration].prix }}">
@@ -113,20 +137,24 @@
           <p>{{ pist.description }}</p>
           <p class="prix-produit">A partir de {{ pist.prix }}€</p>
           <div class="container mt-3">
-            <!-- <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" (click)="add(iteration)">
+           <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" (click)="add(iteration)">
               Ajouter au panier
             </button> -->
 
             <!-- <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" >
               Ajouter au panier
-            </button> -->
+            </button> 
           </div>
 
-          <!-- </form> -->
+        </form>
       </article>
     </section>
   </div>
 
   <br />
-  {{ message }}
+  {{ message }} -->
+
+
+
+
 </body>

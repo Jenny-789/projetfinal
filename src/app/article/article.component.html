@@ -1,20 +1,51 @@
-<p>article works!</p>
-<section class="sect-produit">
-  <!-- Articles produit -->
 
+<div class="container">
+  <div class="row  mt-5 pt-3 ">
+    <div class="col-sm-6">
+test
+      <img class="d-block w-100" src="{{article.lienImage}}"   class="img-produit" />
+      <span class="span-produit">{{article.nom }}</span>
+      <p>{{ article.description }}</p>
+    
+    </div>
 
-      <img src="{{ lienImage }}" alt="Ecran 1" class="img-produit"  />
-      <span class="span-produit">{{ nom }}</span>  
-      <p>{{ description }}</p>
-      <p class="prix-produit">A partir de {{ prix }}€</p>
-      <div class="container mt-3">
-        <!-- <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" (click)="add(iteration)">
-          Ajouter au panier
-        </button> -->
+    <div class="col-sm-2 border rounded-3 ">
+test
+      <h3 class="text-center mt-2">{{article.prix}}€ </h3>
 
-        <!-- <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" >
-          Ajouter au panier
-        </button> -->
+      <hr>
+      <label for="quantite" class="form-label">Quantité :</label>
+      <div class="text-center">
+        <input type="number" id="quantite" class="form-control " value="1" [(ngModel)]="article.quantite">
+        <div class="d-grid">
+          <button type="button" class="btn btn-warning mt-2" (click)="addpanier()">Ajouter au panier</button>
+
+        </div>
       </div>
+    </div>
 
-</section>
+  </div>
+
+
+
+  <!-- YUSUF
+  <p>article works!</p>
+  <section class="sect-produit">
+   Articles produit 
+  
+  
+        <img src="{{ lienImage }}" alt="Ecran 1" class="img-produit"  />
+        <span class="span-produit">{{ nom }}</span>  
+        <p>{{ description }}</p>
+        <p class="prix-produit">A partir de {{ prix }}€</p>
+        <div class="container mt-3">
+         <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" (click)="add(iteration)">
+            Ajouter au panier
+          </button> -->
+
+  <!-- <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" >
+            Ajouter au panier
+          </button> 
+        </div>
+
+</section> -->
