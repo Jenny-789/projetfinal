@@ -12,10 +12,11 @@ import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
 import { SupportComponent } from './support/support.component';
 import { ProduitComponent } from './produit/produit.component';
 import { CommandeComponent } from './commande/commande.component';
+import { ProfilComponent } from './compte/profil/profil.component';
+import { CoordonneesComponent } from './compte/coordonnees/coordonnees.component';
 
 const routes: Routes = [
-
-  { path: "", redirectTo:"accueil", pathMatch:"full" },
+  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'clients', component: ClientsComponent },
   { path: 'inscription', component: InscriptionComponent },
@@ -26,7 +27,10 @@ const routes: Routes = [
   { path: 'support', component: SupportComponent },
   { path: 'produit', component: ProduitComponent },
   { path: 'commande', component: CommandeComponent },
-  { path: 'JYTA', component: PreAccueilComponent }
+  { path: 'JYTA', component: PreAccueilComponent },
+  { path: 'profil', component: ProfilComponent },
+  { path: 'profil', component: ProfilComponent },
+  { path: 'coordonnees', component: CoordonneesComponent },
 ];
 
 @NgModule({

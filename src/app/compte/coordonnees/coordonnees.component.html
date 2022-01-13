@@ -1,2 +1,78 @@
-<p>coordonnees works!</p>
-Coordonnées du client modifiable 
+<body>
+  <h1>Mon compte</h1>
+
+  <div class="bandeau">
+    <section class="info">
+      <!-- Ligne 1 -->
+      <div class="ligne1">
+        <span class="span1">Bonjour Jennifer</span>
+        <a href=""><span class="span1">DECONNEXION</span></a>
+      </div>
+
+      <!-- Ligne 2 -->
+      <div class="ligne2">
+        <p class="titre">Changez vos coordonnées</p>
+        <form>
+          <span class="span2">Nouvelle adresse mail :</span>
+          <!-- <input
+            class="imput1"
+            type="text"
+            placeholder="Entrez votre email"
+            [(ngModel)]="c.email"
+          /> -->
+          <br />
+          <span class="span2">Nouveau pseudo :</span>
+          <!-- <input
+            class="imput1"
+            type="text"
+            placeholder="Entrer votre pseudo"
+            [(ngModel)]="username"
+          /> -->
+          <br />
+          <span class="span2">Nouvelle adresse :</span>
+          <!-- <input
+            class="imput1"
+            type="text"
+            placeholder="Entrer votre adresse"
+            [(ngModel)]="adresse"
+          /> -->
+          <br />
+          <span class="span2">Nouveau code postal :</span>
+          <!-- <input
+            class="imput1"
+            type="text"
+            placeholder="Entrer votre cp"
+            [(ngModel)]="cp"
+          /> -->
+          <br />
+          <span class="span2">Nouvelle ville :</span>
+          <!-- <input
+            class="imput1"
+            type="text"
+            placeholder="Entrer le nom de ville"
+            [(ngModel)]="ville"
+          /> -->
+        </form>
+        <button class="btn btn-outline-info valider">Valider</button>
+      </div>
+    </section>
+
+    <!-- CHOIX -->
+    <section class="choix">
+      <article class="art-choix">
+        <a href="profil" class="a-choix"
+          ><span class="span-choix">Mon compte</span></a
+        >
+        <a href="coordonnees" class="a-choix"
+          ><span class="span-choix">Mes coordonnées</span></a
+        >
+        <a href="" class="a-choix"
+          ><span class="span-choix">Mes commandes</span></a
+        >
+        <a href="" class="a-choix"
+          ><span class="span-choix">Newsletter</span></a
+        >
+      </article>
+    </section>
+  </div>
+</body>

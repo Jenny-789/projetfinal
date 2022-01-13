@@ -1,0 +1,128 @@
+h1 {
+  text-align: center;
+  margin-bottom: 100px;
+  font-size: 2rem;
+}
+
+/*************** Bandeau ******************/
+.bandeau {
+  position: relative;
+  margin: auto;
+  background-color: #17a2b8;
+  height: 250px;
+  width: 950px;
+  margin-bottom: 300px;
+  padding-top: 35px;
+}
+
+/*************** Infos ******************/
+.info {
+  background-color: #f5f6f8;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  position: absolute;
+  top: -30px;
+  left: 200px;
+  width: 600px;
+  height: 470px;
+}
+
+/*************** Ligne 1 ******************/
+.ligne1 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px grey solid;
+}
+
+.span1 {
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*************** Ligne 2 ******************/
+.art-compte {
+  background-color: #17a2b8;
+  border: 1px solid black;
+  margin-right: 20px;
+  width: 200px;
+}
+
+.ligne2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+p {
+  width: 350px;
+  font-size: 0.8rem;
+  padding-left: 50px;
+  margin-right: 50px;
+}
+
+.span2 {
+  font-size: 0.8rem;
+  padding-right: 40px;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+img {
+  width: 15px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.span3 {
+  font-size: 0.8rem;
+  margin-left: 15px;
+}
+
+/*************** Ligne commmande ******************/
+.new-comm {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  font-size: 0.8rem;
+  margin-left: 30px;
+  margin-top: 50px;
+}
+
+.new-comm a {
+  margin-top: 43px;
+}
+
+.valider {
+  font-size: 0.6rem;
+  margin-top: 30px;
+  margin-right: 55px;
+}
+
+.table {
+  font-size: 0.7rem;
+  margin-top: 30px;
+}
+
+/*************** Choix ******************/
+.art-choix {
+  display: flex;
+  flex-direction: column;
+}
+
+.a-choix {
+  padding-top: 15px;
+  color: white;
+}
+
+.span-choix {
+  margin-left: 35px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
