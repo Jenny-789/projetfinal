@@ -18,7 +18,12 @@ export class ProduitComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.getArticle();
+    if (sessionStorage.getItem("nom_recherche")==""){
+      this.getArticle();
+    }else{
+      this.nom=sessionStorage.getItem("nom_recherche")
+      this.searchByNom()
+    }
   }
 
   getArticle() {
