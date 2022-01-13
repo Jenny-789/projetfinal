@@ -19,6 +19,7 @@ import { FooterComponent } from './Footer/footer.component';
 import { MentionsComponent } from './Footer/mentions/mentions.component';
 import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
 import { SupportComponent } from './support/support.component';
+import { ProduitComponent } from './produit/produit.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { SupportComponent } from './support/support.component';
     MentionsComponent,
     PreAccueilComponent,
     SupportComponent,
+    ProduitComponent,
     
   ],
   imports: [

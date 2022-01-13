@@ -1,0 +1,154 @@
+<!----------------------- CAROUSEL ------------------------->
+<body>
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-ride="carousel"
+  >
+    <ol class="carousel-indicators">
+      <li
+        data-target="#carouselExampleIndicators"
+        data-slide-to="0"
+        class="active"
+      ></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="#"
+          ><img
+            src="/assets/ImagesSite/pub3.jpg"
+            class="d-block w-100"
+            alt="..."
+        /></a>
+      </div>
+      <div class="carousel-item">
+        <a href="#"
+          ><img
+            src="/assets/ImagesSite/pub1.jpg"
+            class="d-block w-100"
+            alt="..."
+        /></a>
+      </div>
+      <div class="carousel-item">
+        <a href="#"
+          ><img
+            src="/assets/ImagesSite/pub4.jpg"
+            class="d-block w-100"
+            alt="..."
+        /></a>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-target="#carouselExampleIndicators"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-target="#carouselExampleIndicators"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </button>
+  </div>
+
+  <!------------------------- FILTRE  ------------------------->
+  <section>
+    <span>Filtrer</span>
+    <button (click)="getArticle()">Reinitialiser</button>
+    <!-- Par nom -->
+    <article>
+      <h4>Nom</h4>
+      <input type="text" [(ngModel)]="nom" />
+      <button (click)="searchByNom()">Trouver</button>
+    </article>
+    <!-- Par prix -->
+    <article>
+      <h4>Prix</h4>
+      Prix minimum<input type="number" [(ngModel)]="min" /> Prix maximum<input
+        type="number"
+        [(ngModel)]="max"
+      />
+      <button (click)="searchByPrix()">Trouver</button>
+    </article>
+
+    <!-------------------------- CHECKBOX ---------------------->
+    <!-- <article>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            value=""
+            [(ngModel)]="min"
+            [(ngModel)]="max"
+          />1000€ et plus
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            value=""
+            [(ngModel)]="min"
+            [(ngModel)]="max"
+          />800€ - 1000€
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            value=""
+            [(ngModel)]="min"
+            [(ngModel)]="max"
+          />600€ - 800€
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            value=""
+            [(ngModel)]="min"
+            [(ngModel)]="max"
+          />500€ - 600€
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="" />500€ et
+          moins
+        </label>
+      </div>
+    </article> -->
+  </section>
+
+  <!------------------------- LISTE PRODUITS  ------------------------->
+
+  <section class="sect-produit">
+    <!-- Articles produit -->
+    <article class="art-produit" *ngFor="let pist of myList">
+      <img src="{{ pist.lienImage }}" alt="Ecran 1" class="img-produit" />
+      <span class="span-produit">{{ pist.nom }}</span>
+      <p>{{ pist.description }}</p>
+      <p class="prix-produit">A partir de {{ pist.prix }}€</p>
+      <div class="container mt-3">
+        <button type="button" class="btn btn-outline-info">
+          Ajouter au panier
+        </button>
+      </div>
+    </article>
+  </section>
+</body>
