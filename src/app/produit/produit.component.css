@@ -15,6 +15,63 @@ body {
 
 /****************************** PRODUITS ****************************/
 
+.flex {
+  display: flex;
+  margin-top: 70px;
+  margin-left: 50px;
+  margin-bottom: 70px;
+}
+
+/* Filtre */
+.sect-filtre {
+  background-color: white;
+  margin-right: 30px;
+  padding: 30px;
+  height: 440px;
+  width: 350px;
+  /* max-width: 500px; */
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  position : sticky;
+  top: 100px;
+}
+
+.flex-reset {
+  display: flex;
+}
+
+.filtrer {
+  padding-right: 20px;
+  padding-top: 1rem;
+}
+
+.btn-outline-info {
+  font-size: 0.5rem;
+}
+
+h4 {
+  padding-top: 20px;
+  font-size: 0.9rem;
+}
+
+.span {
+  font-size: 1rem;
+}
+
+.min {
+  font-size: 0.8rem;
+}
+
+.max {
+  font-size: 0.8rem;
+  padding-top : 10px
+}
+
+.trouver {
+  margin-top: 10px;
+}
+
+/* Produit */
+
 .sect-produit {
   display: flex;
   justify-content: space-evenly;
@@ -30,8 +87,10 @@ body {
   background-color: white;
   padding-bottom: 30px;
   padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-bottom: 40px;
-  width: 30%;
+  width: 35%;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 

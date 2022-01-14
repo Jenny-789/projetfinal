@@ -1,5 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Article } from '../model/article';
+import { Ligne } from '../model/ligne';
+import { Panier } from '../model/panier';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-produit',
@@ -11,12 +16,28 @@ export class ProduitComponent implements OnInit {
   nom: string;
   min: number;
   max: number;
-  constructor(private http: HttpClient) {}
+  a: Article = new Article();
+  tab: Array<Article> = new Array<Article>();
+  message: string;
+  panier: Panier = new Panier("toto");
+  quantite : number;
+
+
+  categorie:string
+  nbAritcles:number
+  article:Article
+  tabArticles:any
+
+  nom2: string;
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router : Router) {}
 
   ngOnInit(): void {
-    console.log('Test 1');
-    this.getArticle();
-    console.log('Test 2');
+    if (sessionStorage.getItem("nom_recherche")==""){
+      this.getArticle();
+    }else{
+      this.nom=sessionStorage.getItem("nom_recherche")
+      this.searchByNom()
+    }
   }
 
   getArticle() {
@@ -60,4 +81,60 @@ export class ProduitComponent implements OnInit {
         }
       );
   }
+
+  // add(i) { 
+  //   this.tab = JSON.parse(sessionStorage.getItem('panier')) || new Array<Article>();
+  //   //console.log(i);
+  //   let x: Article = this.myList[i];
+  //   let bool = false;
+  //   if (this.tab.length !== 0) {
+  //     for (let index = 0; index < this.myList.length; index++) {
+  //       if(this.tab != null && this.tab[index].nom === x.nom) {
+  //         bool = true;
+  //         this.tab[index].quantite ++;
+  //         break;
+  //       }
+  //     }
+  //   }
+  //   if (!bool) {
+  //     x.quantite = 1;
+  //     console.log(x);
+      
+  //     this.tab.push(x);
+      
+  //   }
+  //   let str: string = JSON.stringify(this.tab);
+  //   sessionStorage.setItem('panier', str);
+  // }
+
+  // addbis(i) { 
+  //   let x: Article = this.myList[i];
+  //   let lig :Ligne = new Ligne(this.quantite, x);
+
+  //   this.panier.add(lig);
+  //   let str: string = JSON.stringify(this.panier);
+  //   sessionStorage.setItem('panierbis', str);
+  // }
+
+  // addTer(form: NgForm){
+  //   console.log(form.value);
+    
+  // }
+
+  // addQuart(){
+    
+
+    
+  // }
+
+  // create(){
+  //   let art : Article= new Article();
+  //   art.id=this.id;
+  //   art.marque=this.marque;
+  //   art.prix=this.prix;
+
+  //   let lig :Ligne = new Ligne(this.quantite, art);
+  //   this.p1.add(lig);
+  //   this.getTotal();
+  // }
 }

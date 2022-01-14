@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="row  mt-5 pt-3 ">
+    <div class="col-sm-6">
+      <img class="d-block w-100" src="{{article.lienImage}}"   class="img-produit" />
+      <span class="span-produit">{{article.nom }}</span>
+      <p>{{ article.description }}</p>
+    
+    </div>
+
+    <div class="col-sm-2 border rounded-3 ">
+      <h3 class="text-center mt-2">{{article.prix}}€ </h3>
+
+      <hr>
+      <label for="quantite" class="form-label">Quantité :</label>
+      <div class="text-center">
+        <input type="number" id="quantite" class="form-control " value="1" [(ngModel)]="article.quantite">
+        <div class="d-grid">
+          <button type="button" class="btn btn-warning mt-2" (click)="addpanier()">Ajouter au panier</button>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+

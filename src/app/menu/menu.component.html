@@ -1,12 +1,10 @@
 <!-- ************* Menu avec le panier**************** -->
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
   <!-- Links -->
   <ul class="navbar-nav ml-auto">
-    
     <li class="nav-item">
-      <a class="nav-link" href="#">Panier</a>
+      <a class="nav-link" href="commande">Panier</a>
     </li>
     <!-- Dropdown -->
     <!-- <li class="nav-item dropdown">
@@ -18,21 +16,24 @@
         <a class="dropdown-item" href="#">S'inscrire</a>
       </div> 
   </li> -->
-  <li> <a  class="nav-link">{{authService.isloggedIn}}</a></li>
-  
-  <li class="nav-item dropdown">
-     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >
-Mon Compte  </a>
-  <div class="dropdown-menu">
-  <a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink = "login">Se Connecter</a>
-  <a *ngIf="!authService.isloggedIn" class="dropdown-item"  routerLink="inscription" >Inscription</a> 
-  <a *ngIf="authService.isloggedIn" class="dropdown-item" href="#">Profil</a>
-  <a *ngIf="authService.isloggedIn" class="dropdown-item" routerLink="clients">Clients</a>
-  <a *ngIf="authService.isloggedIn" class="dropdown-item"  (click) = "onLogout()">Déconnexion</a>
-  </div>
-  </li>
+    <li>
+      <a class="nav-link">{{ authService.isloggedIn }}</a>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Mon Compte
+      </a>
+      <div class="dropdown-menu">
+        <a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink="login">Se Connecter</a>
+        <a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink="inscription">Inscription</a>
+        <a *ngIf="authService.isloggedIn" class="dropdown-item" href="#">Profil</a>
+        <a *ngIf="authService.isloggedIn" class="dropdown-item" routerLink="clients">Clients</a>
+        <a *ngIf="authService.isloggedIn" class="dropdown-item" (click)="onLogout()">Déconnexion</a>
+      </div>
+    </li>
   </ul>
-</nav> 
+</nav>
 
 <!-- ************* Menu avec les produits **************** -->
 
@@ -44,11 +45,11 @@ Mon Compte  </a>
 
   <ul class="navbar-nav">
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="/accueil" id="navbardrop" data-toggle="dropdown">
+      <a (click)=recherche() class="nav-link dropdown-toggle" routerLink="produit" id="navbardrop" data-toggle="dropdown">
         Produits
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">PC Fixe</a>
+        <a class="dropdown-item" href="produit">PC Fixe</a>
         <a class="dropdown-item" href="#">PC Portable</a>
         <a class="dropdown-item" href="#">Tablette</a>
         <a class="dropdown-item" href="#">Serveur</a>
@@ -57,7 +58,7 @@ Mon Compte  </a>
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href = "/service">Service</a>
+      <a class="nav-link" href="/service">Service</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -65,12 +66,12 @@ Mon Compte  </a>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#">FAQ</a>
-        <a class="dropdown-item" href="#">Contactez-nous</a>
+        <a class="dropdown-item" href="support">Contactez-nous</a>
       </div>
     </li>
   </ul>
   <form class="form-inline" action="/action_page.php">
-    <input class="form-control mr-sm-2" type="text" placeholder="recherche">
-    <button class="btn btn-success" type="submit">Recherche</button>
+    <input [(ngModel)]="nom" name="nom" class="form-control mr-sm-2" type="text" placeholder="recherche"/>
+    <button (click)=reRoot() routerLink="produit" class="btn btn-success" type="submit">Recherche</button>
   </form>
-</nav> 
+</nav>

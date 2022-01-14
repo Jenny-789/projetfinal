@@ -61,94 +61,100 @@
   </div>
 
   <!------------------------- FILTRE  ------------------------->
-  <section>
-    <span>Filtrer</span>
-    <button (click)="getArticle()">Reinitialiser</button>
-    <!-- Par nom -->
-    <article>
-      <h4>Nom</h4>
-      <input type="text" [(ngModel)]="nom" />
-      <button (click)="searchByNom()">Trouver</button>
-    </article>
-    <!-- Par prix -->
-    <article>
-      <h4>Prix</h4>
-      Prix minimum<input type="number" [(ngModel)]="min" /> Prix maximum<input
-        type="number"
-        [(ngModel)]="max"
-      />
-      <button (click)="searchByPrix()">Trouver</button>
-    </article>
-
-    <!-------------------------- CHECKBOX ---------------------->
-    <!-- <article>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input
-            type="checkbox"
-            class="form-check-input"
-            value=""
-            [(ngModel)]="min"
-            [(ngModel)]="max"
-          />1000€ et plus
-        </label>
+  <div class="flex">
+    <section class="sect-filtre">
+      <div class="flex-reset">
+        <span class="filtrer">Filtrer</span>
+        <div class="container mt-3">
+          <button (click)="getArticle()" class="btn btn-outline-info reset">
+            Reinitialiser
+          </button>
+        </div>
       </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input
-            type="checkbox"
-            class="form-check-input"
-            value=""
-            [(ngModel)]="min"
-            [(ngModel)]="max"
-          />800€ - 1000€
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input
-            type="checkbox"
-            class="form-check-input"
-            value=""
-            [(ngModel)]="min"
-            [(ngModel)]="max"
-          />600€ - 800€
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input
-            type="checkbox"
-            class="form-check-input"
-            value=""
-            [(ngModel)]="min"
-            [(ngModel)]="max"
-          />500€ - 600€
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" value="" />500€ et
-          moins
-        </label>
-      </div>
-    </article> -->
-  </section>
-
-  <!------------------------- LISTE PRODUITS  ------------------------->
-
-  <section class="sect-produit">
-    <!-- Articles produit -->
-    <article class="art-produit" *ngFor="let pist of myList">
-      <img src="{{ pist.lienImage }}" alt="Ecran 1" class="img-produit" />
-      <span class="span-produit">{{ pist.nom }}</span>
-      <p>{{ pist.description }}</p>
-      <p class="prix-produit">A partir de {{ pist.prix }}€</p>
-      <div class="container mt-3">
-        <button type="button" class="btn btn-outline-info">
-          Ajouter au panier
+      <!-- Par nom -->
+      <article>
+        <h4>Nom</h4>
+        <input type="text" [(ngModel)]="nom" class="imput" />
+        <button (click)="searchByNom()" class="btn btn-outline-info trouver">
+          Trouver
         </button>
-      </div>
-    </article>
-  </section>
+      </article>
+      <!-- Par prix -->
+      <article>
+        <h4>Prix</h4>
+        <p class="min">Prix minimum</p> <input type="number" [(ngModel)]="min" />  <p class="max">Prix maximum</p><input
+          type="number"
+          [(ngModel)]="max"
+        />
+        <button (click)="searchByPrix()" class="btn btn-outline-info trouver">
+          Trouver
+        </button>
+      </article>
+    </section>
+
+    <!------------------------- LISTE PRODUITS  ------------------------->
+    <section class="sect-produit">
+      <!-- Articles produit -->
+
+      <article
+        class="art-produit"
+        *ngFor="let pist of myList; let iteration = index"
+      >
+        <input type="hidden" value="{{ iteration }}" />
+        <img src="{{ pist.lienImage }}"  alt="Ecran 1" class="img-produit" />
+        <span class="span-produit">{{ pist.nom }}</span>
+        <p>{{pist.description}}</p>
+        <p class="prix-produit">A partir de {{pist.prix}}€</p>
+        <div class="container mt-3">
+          <button type="submit" class="btn btn-outline-info"   routerLink="/article/{{pist.id}}"value="{{ iteration }}" >
+En savoir plus          </button> 
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <br />
+
+
+
+
+    <!-- <section class="sect-produit">
+     Articles produit
+
+      <article class="art-produit" *ngFor="let pist of myList; let iteration = index" >
+        <input type="hidden" value="{{ iteration }}" >
+         <form (ngSubmit)="addTer()"> -->
+          <!-- <form #signupForm="ngForm" (ngSubmit)="addTer(signupForm)"> -->
+          <!-- <input type="text" name="nom" id="nom" value="{{ pist.nom }}" ngModel>
+          <input type="text" name="prix" id="prix" value="{{ pist.prix }}" ngModel>
+          <input type="text" name="test" id="test" value="bonjour" ngModel>
+            
+          <input type="text" name="nom" id="nom" value="{{ myList[iteration].nom }}">
+          <input type="text" name="prix" id="prix" value="{{ myList[iteration].prix }}">
+
+          <img src="{{ pist.lienImage }}" alt="Ecran 1" class="img-produit" routerLink="/article/{{pist.nom}}" />
+          <span class="span-produit">{{ pist.nom }}</span>  
+          <p>{{ pist.description }}</p>
+          <p class="prix-produit">A partir de {{ pist.prix }}€</p>
+          <div class="container mt-3">
+           <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" (click)="add(iteration)">
+              Ajouter au panier
+            </button> -->
+
+            <!-- <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" >
+              Ajouter au panier
+            </button> 
+          </div>
+
+        </form>
+      </article>
+    </section>
+  </div>
+
+  <br />
+  {{ message }} -->
+
+
+
+
 </body>
