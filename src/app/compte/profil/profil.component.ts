@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profil.component.css'],
 })
 export class ProfilComponent implements OnInit {
+  tab: any;
+  currentDate = new Date();
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tab = JSON.parse(localStorage.getItem('loggedUser'));
+  }
 }

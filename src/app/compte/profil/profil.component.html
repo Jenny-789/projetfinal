@@ -4,8 +4,7 @@
   <div class="bandeau">
     <section class="info">
       <div class="ligne1">
-        <span class="span1">Bonjour Jennifer</span>
-        <a href=""><span class="span1">DECONNEXION</span></a>
+        <span class="span1">Bonjour {{ tab.prenom }}</span>
       </div>
       <div class="ligne2">
         <p>
@@ -15,16 +14,18 @@
         </p>
         <!------------ Compte ---------------->
         <article class="art-compte">
-          <span class="span2">Jennifert Lambert</span>
+          <span class="span2">{{ tab.prenom }} {{ tab.nom }}</span>
           <a href="coordonnees"
-            ><img src="/assets/ImagesSite/pen-solid.svg" alt=""
+            ><img src="/assets/ImagesSite/pen-solid.svg" alt="" class="pen"
           /></a>
           <br />
-          <span class="span3">jenny13@hotmail.fr</span>
+          <span class="span3">{{ tab.email }}</span>
           <br />
-          <span class="span3">Inscrit depuis : Vendredi 17</span>
+          <span class="span3">Pseudo : {{ tab.username }}</span>
           <br />
-          <span class="span3">Janvier 2022</span>
+          <span class="span3"
+            >Date du jour : {{ currentDate | date: "dd-MM-yyyy" }}</span
+          >
         </article>
       </div>
 
@@ -32,9 +33,9 @@
       <div class="ligne-commmande">
         <div class="new-comm">
           <h3>Vos dernières commandes</h3>
-          <button href="produit" class="btn btn-outline-info valider">
+          <a href="produit" class="btn btn-outline-info valider">
             Nouvelle commande
-          </button>
+          </a>
         </div>
       </div>
       <div class="container">
@@ -75,7 +76,7 @@
     <section>
       <article class="art-choix">
         <a href="profil" class="a-choix"
-          ><span class="span-choix">Mon compte</span></a
+          ><span class="span-choix">Mon profil</span></a
         >
         <a href="coordonnees" class="a-choix"
           ><span class="span-choix">Mes coordonnées</span></a

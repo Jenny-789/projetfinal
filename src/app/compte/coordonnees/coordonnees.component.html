@@ -5,8 +5,7 @@
     <section class="info">
       <!-- Ligne 1 -->
       <div class="ligne1">
-        <span class="span1">Bonjour Jennifer</span>
-        <a href=""><span class="span1">DECONNEXION</span></a>
+        <span class="span1">Bonjour {{ tab.prenom }}</span>
       </div>
 
       <!-- Ligne 2 -->
@@ -14,44 +13,27 @@
         <p class="titre">Changez vos coordonnées</p>
         <form>
           <span class="span2">Nouvelle adresse mail :</span>
-          <!-- <input
-            class="imput1"
-            type="text"
-            placeholder="Entrez votre email"
-            [(ngModel)]="c.email"
-          /> -->
+          <input class="imput1" type="text" placeholder="Entrez votre email" />
           <br />
           <span class="span2">Nouveau pseudo :</span>
-          <!-- <input
-            class="imput1"
-            type="text"
-            placeholder="Entrer votre pseudo"
-            [(ngModel)]="username"
-          /> -->
+          <input class="imput1" type="text" placeholder="Entrer votre pseudo" />
           <br />
           <span class="span2">Nouvelle adresse :</span>
-          <!-- <input
+          <input
             class="imput1"
             type="text"
             placeholder="Entrer votre adresse"
-            [(ngModel)]="adresse"
-          /> -->
+          />
           <br />
           <span class="span2">Nouveau code postal :</span>
-          <!-- <input
-            class="imput1"
-            type="text"
-            placeholder="Entrer votre cp"
-            [(ngModel)]="cp"
-          /> -->
+          <input class="imput1" type="text" placeholder="Entrer votre cp" />
           <br />
           <span class="span2">Nouvelle ville :</span>
-          <!-- <input
+          <input
             class="imput1"
             type="text"
             placeholder="Entrer le nom de ville"
-            [(ngModel)]="ville"
-          /> -->
+          />
         </form>
         <button class="btn btn-outline-info valider">Valider</button>
       </div>
@@ -61,7 +43,7 @@
     <section class="choix">
       <article class="art-choix">
         <a href="profil" class="a-choix"
-          ><span class="span-choix">Mon compte</span></a
+          ><span class="span-choix">Mon profil</span></a
         >
         <a href="coordonnees" class="a-choix"
           ><span class="span-choix">Mes coordonnées</span></a

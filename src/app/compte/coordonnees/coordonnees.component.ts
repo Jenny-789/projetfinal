@@ -12,14 +12,13 @@ export class CoordonneesComponent implements OnInit {
   adresse: string;
   cp: string;
   ville: string;
+  tab: any;
 
   c = new Client();
 
   constructor() {}
 
-  ngOnInit(): void {}
-
-  search() {
-    console.log('test');
+  ngOnInit(): void {
+    this.tab = JSON.parse(localStorage.getItem('loggedUser'));
   }
 }
