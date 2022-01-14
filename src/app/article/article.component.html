@@ -1,28 +1,38 @@
-
-<div class="container">
-  <div class="row  mt-5 pt-3 ">
-    <div class="col-sm-6">
-      <img class="d-block w-100" src="{{article.lienImage}}"   class="img-produit" />
-      <span class="span-produit">{{article.nom }}</span>
-      <p>{{ article.description }}</p>
-    
-    </div>
-
-    <div class="col-sm-2 border rounded-3 ">
-      <h3 class="text-center mt-2">{{article.prix}}€ </h3>
-
-      <hr>
+<body>
+  <section class="flex">
+    <!-- Article 1 -->
+    <article class="art1">
+      <img src="{{ article.lienImage }}" class="img-produit" />
+      <p class="p-produit">{{ article.nom }}</p>
+      <p class="p-desc">{{ article.description }}</p>
+    </article>
+    <!-- Article 2 -->
+    <article class="art2">
+      <h3 class="text-center mt-2 prix">{{ article.prix }}€</h3>
       <label for="quantite" class="form-label">Quantité :</label>
       <div class="text-center">
-        <input type="number" id="quantite" class="form-control " value="1" [(ngModel)]="article.quantite">
+        <input
+          type="number"
+          id="quantite"
+          class="form-control"
+          value="1"
+          [(ngModel)]="article.quantite"
+        />
         <div class="d-grid">
-          <button type="button" class="btn btn-warning mt-2" (click)="addpanier()">Ajouter au panier</button>
-
+          <button class="btn btn-outline-info ajout" (click)="addpanier()">
+            Ajouter au panier
+          </button>
         </div>
       </div>
-    </div>
-
-  </div>
-
-
-
+    </article>
+    <!-- Article 2 -->
+    <article class="art3">
+      <a href="produit" class="btn btn-outline-info continue">
+        Continuer mes achats
+      </a>
+      <a href="commande" class="btn btn-outline-info acces">
+        Accéder au panier
+      </a>
+    </article>
+  </section>
+</body>

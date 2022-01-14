@@ -1,0 +1,45 @@
+<div class="container">
+  <h2 class="text-center pt-5">Le récapitulatif de votre commmande</h2>
+  <hr />
+  <p>Votre commande a bien été prise en compte.</p>
+  <p>Nous vous remercions de votre confiance, à très bientôt !</p>
+  <table class="table align-self-center text-center">
+    <thead class="table-secondary">
+      <tr>
+        <th>Article</th>
+        <th>Prix unitaire</th>
+        <th>Quantité</th>
+        <th>Prix Total</th>
+        <th><i class="fa fa-trash" aria-hidden="true"></i></th>
+      </tr>
+    </thead>
+    <tr scope="row" *ngFor="let x of panier; let i = index">
+      <td class="tdimg">
+        {{ x.nom }}
+      </td>
+
+      <td class="td">{{ x.prix | currency: "":"":"3.0-1" }} €</td>
+      <td class="tdqty justify-content-center">
+        <input
+          type="number"
+          value="1"
+          class="text-center form-control formperso"
+          [(ngModel)]="x.quantite"
+          (change)="majpanier()"
+        />
+      </td>
+      <td class="td">{{ prixligne(x) | currency: "":"":"3.0-1" }} €</td>
+    </tr>
+  </table>
+
+  <div class="row">
+    <div class="col-sm-6"></div>
+    <div class="col-sm-6 text-end mb-5">
+      <div>
+        <a class="btn btn-outline-info panier" href="validation"
+          >Page d'accueil
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

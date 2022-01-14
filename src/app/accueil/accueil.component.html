@@ -1,22 +1,28 @@
-<a href="#"
-  ><div class="flex">
+<a href="produit">
+  <div class="flex">
     <video
-      class="video"
-      src="/assets/ImagesSite/vostro.mp4"
-      controls
-    ></video></div
-></a>
+      autoplay
+      muted
+      loop
+      id="myVideo"
+      oncanplay="this.play()"
+      onloadedmetadata="this.muted = true"
+    >
+      <source controls src="/assets/ImagesSite/vostro.mp4" type="video/mp4" />
+    </video>
+  </div>
+</a>
 
 <h1>Découvrez nos derniers produits</h1>
 
 <div class="news">
-  <a href="#"
+  <a href="produit"
     ><img class="img" src="/assets/ImagesProduit/Inelucto.JPG" alt="Produit 1"
   /></a>
-  <a href="#">
+  <a href="produit">
     <img class="img" src="/assets/ImagesProduit/bilbon.JPG" alt="Produit 2"
   /></a>
-  <a href="#"
+  <a href="produit"
     ><img class="img" src="/assets/ImagesProduit/mastro.JPG" alt="Produit 3"
   /></a>
 </div>
@@ -30,7 +36,9 @@
       src="/assets/ImagesSite/services.jpg"
       alt="Nos services"
     />
-    <a href="#"><p class="srv-p">Consultez nos prestations de services</p></a>
+    <a href="service"
+      ><p class="srv-p">Consultez nos prestations de services</p></a
+    >
   </div>
 
   <!-- Nos engagements -->

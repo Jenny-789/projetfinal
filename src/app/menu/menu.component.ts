@@ -12,13 +12,18 @@ export class MenuComponent implements OnInit {
   message: string;
   connecte: string;
 
+  tab: any;
+
   myList: any;
-  nom="";
+  nom = '';
 
-  constructor(public authService: AuthService, private router: Router, private http: HttpClient) { }
+  constructor(
+    public authService: AuthService,
+    private router: Router,
+    private http: HttpClient
+  ) {}
 
-
-  //Si utilisateur pas déjà connecté on le redirige vers login - Permet de passer de false à true à la connexion 
+  //Si utilisateur pas déjà connecté on le redirige vers login - Permet de passer de false à true à la connexion
   ngOnInit() {
     let isloggedin: string;
     let loggedUser: string;
@@ -26,23 +31,24 @@ export class MenuComponent implements OnInit {
     loggedUser = localStorage.getItem('loggedUser');
     if (isloggedin != 'true' || !loggedUser) {
       this.message = '';
-      this.connecte = '';
+      this.connecte = ' ';
     } else {
       this.authService.setLoggedUserFromLocalStorage(loggedUser);
-      this.connecte = 'Connecté';
+      this.tab = JSON.parse(localStorage.getItem('loggedUser'));
+      this.connecte = this.tab.prenom;
     }
-  } 
+  }
 
   reRoot() {
-    document.location.assign("http://localhost:4200/produit/");
-    sessionStorage.setItem("nom_recherche", this.nom);
+    document.location.assign('http://localhost:4200/produit/');
+    sessionStorage.setItem('nom_recherche', this.nom);
   }
 
   recherche() {
-    sessionStorage.setItem("nom_recherche", this.nom);
+    sessionStorage.setItem('nom_recherche', this.nom);
   }
 
-  // Deconnexion. Appel la méthode logout dans auth.service.ts et application dans app.component.html 
+  // Deconnexion. Appel la méthode logout dans auth.service.ts et application dans app.component.html
   onLogout() {
     this.authService.logout();
   }

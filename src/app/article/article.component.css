@@ -1,0 +1,78 @@
+.flex {
+  display: flex;
+  margin-bottom: 70px;
+  margin-top: 30px;
+}
+
+/* Article 1 */
+
+.art1 {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin-left: 160px;
+  width: 35%;
+  margin-right: 200px;
+}
+
+.img-produit {
+  width: 400px;
+  height: 300px;
+  display: block;
+  margin: auto;
+}
+
+.p-produit {
+  text-align: center;
+  font-weight: bold;
+}
+
+.p-desc {
+  margin-left: 60px;
+  margin-right: 60px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* Article 2 */
+.art2 {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin-right: 50px;
+  width: 20%;
+  height: 400px;
+}
+
+.prix {
+  background-color: #587d9f;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.form-label {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.form-control {
+  width: 70px;
+  margin-left: 20px;
+}
+
+.ajout {
+  margin-top: 50px;
+}
+
+/* Article 3 */
+.art3 {
+  margin-right: 0px;
+}
+
+.continue {
+  font-size: 0.7rem;
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.acces {
+  font-size: 0.7rem;
+  width: 100px;
+}

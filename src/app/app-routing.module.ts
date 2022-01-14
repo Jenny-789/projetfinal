@@ -15,6 +15,7 @@ import { CommandeComponent } from './commande/commande.component';
 import { ProfilComponent } from './compte/profil/profil.component';
 import { CoordonneesComponent } from './compte/coordonnees/coordonnees.component';
 import { ArticleComponent } from './article/article.component';
+import { ValidationcommandeComponent } from './validationcommande/validationcommande.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent },
   { path: 'profil', component: ProfilComponent },
   { path: 'coordonnees', component: CoordonneesComponent },
-  { path: 'article/:id', component: ArticleComponent }
+  { path: 'article/:id', component: ArticleComponent },
+  { path: 'validation', component: ValidationcommandeComponent },
 ];
 
 @NgModule({

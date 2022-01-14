@@ -15,55 +15,65 @@
     </tr>
   </tbody>
 </table> -->
-
-
-
 <div class="container">
-  <h2 class="text-center pt-5"> Votre Panier </h2>
-  <hr>
+  <h2 class="text-center pt-5">Votre Panier</h2>
 
   <table class="table align-self-center text-center">
-      <thead class="table-secondary">
-          <tr>
-              <th>Article</th>
-              <th>Prix unitaire</th>
-              <th>Quantité</th>
-              <th> Prix Total</th>
-              <th><i class="fa fa-trash" aria-hidden="true"></i></th>
-          </tr>
-      </thead>
-      <tr  scope="row" *ngFor="let x of panier ; let i = index">
-           
-          <td class="tdimg">
-              {{x.nom}}
-          </td>
-
-          <td class="td">
-              {{x.prix | currency:'':'':'3.0-1'}} €
-          </td>
-          <td class="tdqty justify-content-center">
-              
-                  <input type="number" value="1" class="text-center form-control formperso" [(ngModel)]="x.quantite" (change)="majpanier()">
-              
-          </td>
-          <td class="td">
-             {{prixligne(x) | currency:'':'':'3.0-1'}} €
-          </td>
-          <td class="td">
-              <span class="my-5"><button type="button" class="btn btn-danger" (click)="deletearticle(i)"><i class="fa fa-trash" aria-hidden="true">supprimer</i></button></span>
-          </td>
-  
-          
+    <thead class="table-secondary">
+      <tr>
+        <th>Article</th>
+        <th>Prix unitaire</th>
+        <th>Quantité</th>
+        <th>Prix Total</th>
+        <th><i class="fa fa-trash" aria-hidden="true"></i></th>
       </tr>
-  
-  
+    </thead>
+    <tr scope="row" *ngFor="let x of panier; let i = index">
+      <td class="tdimg">
+        {{ x.nom }}
+      </td>
+
+      <td class="td">{{ x.prix | currency: "":"":"3.0-1" }} €</td>
+      <td class="tdqty justify-content-center">
+        <input
+          type="number"
+          value="1"
+          class="text-center form-control formperso"
+          [(ngModel)]="x.quantite"
+          (change)="majpanier()"
+        />
+      </td>
+      <td class="td">{{ prixligne(x) | currency: "":"":"3.0-1" }} €</td>
+      <td class="td">
+        <span class="my-5"
+          ><button
+            type="button"
+            class="btn btn-danger"
+            (click)="deletearticle(i)"
+          >
+            <i class="fa fa-trash" aria-hidden="true">supprimer</i>
+          </button></span
+        >
+      </td>
+    </tr>
   </table>
 
-<div class="row">
-  <div class="col-sm-6"></div>
-  <div class="col-sm-6 text-end mb-5">
-      <span class="pe-5">Prix : {{prixPanier()| currency:'':'':'3.0-1'}} €</span>
-      <button class="btn btn-warning ms-5 btn-lg">Valider mon panier</button>
+  <div class="row">
+    <!-- <div class="col-sm-6 text-end mb-5"> -->
+    <span class="pe-5">
+      <strong>Prix :</strong>
+      {{ prixPanier() | currency: "":"":"3.0-1" }} €</span
+    >
+    <div>
+      <a class="btn btn-outline-info achat" href="produit"
+        >Valider mon panier
+      </a>
+    </div>
+    <div>
+      <a class="btn btn-outline-info panier" href="validation"
+        >Continuer mes achats</a
+      >
+    </div>
   </div>
-</div>
+  <!-- </div> -->
 </div>

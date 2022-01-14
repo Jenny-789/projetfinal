@@ -1,34 +1,44 @@
-
-
 /* Première partie */
-  #message {
-    position: absolute;
-    left : 20px;
-    top  : 70px;
-  }
 
- input, textarea {
-    font    : .9em/1.5em "handwriting", sans-serif;
-  
-    border  : none;
-    border-width: 1px;
-    padding : 0 10px;
-    margin  : 100;
-    width   : 500px;
-    border-color: rgb(167, 168, 167);
-    border-style: solid;
-    background: none;
-  }
+.bg-img {
+  background-image: url("/assets/ImagesSite/server.jpg");
+  height: 400px;
+}
 
+.p1 {
+  color: white;
+  font-size: 1.5rem;
+  padding-top: 150px;
+  padding-left: 150px;
+}
 
+.p2 {
+  color: white;
+  font-size: 1.5rem;
+  padding-top: 50px;
+  padding-left: 450px;
+}
 
-  /*Seconde partie*/ 
-.sect1 {
-  display: flex;
+h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 50px;
+}
+
+.p3 {
+  text-align: center;
   margin-top: 30px;
 }
 
-        /* Nos engagements */
+/*Seconde partie*/
+.sect1 {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 300px;
+  margin-bottom: 70px;
+}
+
+/* Nos engagements */
 .flex-h {
   display: flex;
   justify-content: space-around;
@@ -44,14 +54,14 @@
 }
 
 .h3-engage {
-  margin-top: 80px;
+  margin-top: 150px;
   font-size: 1.5rem;
   text-align: center;
 }
 
 .img-main {
   height: 150px;
-  weight: 2000px;
+  width: 2000px;
 }
 
 h4 {
@@ -64,4 +74,28 @@ h4 {
   font-size: 0.8rem;
   padding-bottom: 15px;
   border-bottom: 1px solid #c4c5c7;
+}
+
+.register-form {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 270px;
+  background-color: #f5f6f8;
+}
+
+.form-control {
+  width: 240px;
+  margin-bottom: 10px;
+}
+
+.sign-in {
+  margin-left: 90px;
+}
+
+.message {
+  padding-top: 30px;
 }

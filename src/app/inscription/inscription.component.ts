@@ -10,6 +10,7 @@ import Validation from '../onglet-service/validation';
 import { Client } from '../model/client.model';
 import { ClientsService } from '../services/clients.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
@@ -40,8 +41,9 @@ export class InscriptionComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private clientService: ClientsService,
-    private http: HttpClient
-  ) { }
+    private http: HttpClient,
+    private _router: Router
+  ) {}
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
@@ -57,8 +59,8 @@ export class InscriptionComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(6),
-            Validators.maxLength(20)
-          ]
+            Validators.maxLength(20),
+          ],
         ],
         email: ['', [Validators.required, Validators.email]],
         password: [
@@ -66,14 +68,14 @@ export class InscriptionComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(6),
-            Validators.maxLength(40)
-          ]
+            Validators.maxLength(40),
+          ],
         ],
         confirmPassword: ['', Validators.required],
-        acceptTerms: [false, Validators.requiredTrue]
+        acceptTerms: [false, Validators.requiredTrue],
       },
       {
-        validators: [Validation.match('password', 'confirmPassword')]
+        validators: [Validation.match('password', 'confirmPassword')],
       }
     );
   }
@@ -92,10 +94,9 @@ export class InscriptionComponent implements OnInit {
       this.create();
     }
     console.log(JSON.stringify(this.form.value, null, 2));
-
   }
 
-  //Remise à zero 
+  //Remise à zero
   onReset(): void {
     this.submitted = false;
     this.form.reset();
@@ -103,15 +104,15 @@ export class InscriptionComponent implements OnInit {
 
   create() {
     const body = JSON.stringify(this.newClient);
-    this.http.post("http://localhost:8080/formation/rest/personnes", body, {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json",
-      }),
-    }).subscribe(response => {
-      console.log("Inscription réussi ")
-      this.message = "Inscription réussi - Bienvenue parmi nous " + this.newClient.prenom;
-    });
-
+    this.http
+      .post('http://localhost:8080/formation/rest/personnes', body, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+        }),
+      })
+      .subscribe((response) => {
+        console.log('Inscription réussi ');
+        this._router.navigate(['login']);
+      });
   }
-
 }
