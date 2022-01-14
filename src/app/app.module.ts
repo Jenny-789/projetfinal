@@ -21,6 +21,7 @@ import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
 import { SupportComponent } from './support/support.component';
 import { ProduitComponent } from './produit/produit.component';
 import { CommandeComponent } from './commande/commande.component';
+import { ArticleComponent } from './article/article.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { CommandeComponent } from './commande/commande.component';
     PreAccueilComponent,
     SupportComponent,
     ProduitComponent,
-    CommandeComponent
+    CommandeComponent,
+    ArticleComponent
     
   ],
   imports: [

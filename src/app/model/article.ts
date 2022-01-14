@@ -5,4 +5,9 @@ export class Article {
   description: string;
   lienImage: string;
   quantite : number;
+  prixtotal : number; 
+
+  calcultotal(){
+    this.prix*this.quantite; 
+  }
 }
