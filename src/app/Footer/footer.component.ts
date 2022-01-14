@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
+email:string; 
   newsletter = new Newsletter();
   message : String; 
   // email : String; 
@@ -44,7 +44,7 @@ export class FooterComponent implements OnInit {
 
   newslettersave() {
     const body = JSON.stringify(this.newsletter);
-    this.http.post("http://localhost:8080/formation/neswletter/email", body, {
+    this.http.post("http://localhost:8080/formation/neswletter/email/"+this.email, body, {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
       }),
