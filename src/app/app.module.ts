@@ -21,6 +21,7 @@ import { PreAccueilComponent } from './pre-accueil/pre-accueil.component';
 import { SupportComponent } from './support/support.component';
 import { ProduitComponent } from './produit/produit.component';
 import { CommandeComponent } from './commande/commande.component';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { CommandeComponent } from './commande/commande.component';
     SupportComponent,
     ProduitComponent,
     CommandeComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
