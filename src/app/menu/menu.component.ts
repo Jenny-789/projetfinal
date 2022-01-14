@@ -6,10 +6,12 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
   message: string;
+  connecte: string;
+
   myList: any;
   nom="";
 
@@ -22,11 +24,14 @@ export class MenuComponent implements OnInit {
     let loggedUser: string;
     isloggedin = localStorage.getItem('isloggedIn');
     loggedUser = localStorage.getItem('loggedUser');
-    if (isloggedin != "true" || !loggedUser)
-      this.message = "";
-    else
+    if (isloggedin != 'true' || !loggedUser) {
+      this.message = '';
+      this.connecte = '';
+    } else {
       this.authService.setLoggedUserFromLocalStorage(loggedUser);
-  }
+      this.connecte = 'Connecté';
+    }
+  } 
 
   reRoot() {
     document.location.assign("http://localhost:4200/produit/");

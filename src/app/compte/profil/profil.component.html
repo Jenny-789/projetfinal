@@ -1,3 +1,93 @@
-<p>profil works!</p>
-On y trouvera un recap du profil + la dernière commande par exemple
-Elle regroupe les commandes/coordonnées 
+<body>
+  <h1>Mon compte</h1>
+  <!------------ Bandeau ---------------->
+  <div class="bandeau">
+    <section class="info">
+      <div class="ligne1">
+        <span class="span1">Bonjour {{ tab.prenom }}</span>
+      </div>
+      <div class="ligne2">
+        <p>
+          Profitez de l'ensemble des fonctionalités qui vous sont proposées sur
+          votre espace personnel pour consulter, suivre et gérer toutes les
+          données vous concernant.
+        </p>
+        <!------------ Compte ---------------->
+        <article class="art-compte">
+          <span class="span2">{{ tab.prenom }} {{ tab.nom }}</span>
+          <a href="coordonnees"
+            ><img src="/assets/ImagesSite/pen-solid.svg" alt="" class="pen"
+          /></a>
+          <br />
+          <span class="span3">{{ tab.email }}</span>
+          <br />
+          <span class="span3">Pseudo : {{ tab.username }}</span>
+          <br />
+          <span class="span3"
+            >Date du jour : {{ currentDate | date: "dd-MM-yyyy" }}</span
+          >
+        </article>
+      </div>
+
+      <!------------ Commande ---------------->
+      <div class="ligne-commmande">
+        <div class="new-comm">
+          <h3>Vos dernières commandes</h3>
+          <a href="produit" class="btn btn-outline-info valider">
+            Nouvelle commande
+          </a>
+        </div>
+      </div>
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Commande</th>
+              <th>Date</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Vendredi 14 Janvier 2022</td>
+              <td>1200€</td>
+              <td>Validé</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Mardi 12 Janvier 2022</td>
+              <td>420€</td>
+              <td>Validé</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Ludndi 11 Janvier 2022</td>
+              <td>80€</td>
+              <td>Validé</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!------------ Choix ---------------->
+    <section>
+      <article class="art-choix">
+        <a href="profil" class="a-choix"
+          ><span class="span-choix">Mon profil</span></a
+        >
+        <a href="coordonnees" class="a-choix"
+          ><span class="span-choix">Mes coordonnées</span></a
+        >
+        <a href="" class="a-choix"
+          ><span class="span-choix">Mes commandes</span></a
+        >
+        <a href="" class="a-choix"
+          ><span class="span-choix">Newsletter</span></a
+        >
+      </article>
+    </section>
+  </div>
+</body>

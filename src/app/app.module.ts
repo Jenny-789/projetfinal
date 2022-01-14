@@ -23,7 +23,6 @@ import { ProduitComponent } from './produit/produit.component';
 import { CommandeComponent } from './commande/commande.component';
 import { ArticleComponent } from './article/article.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +42,6 @@ import { ArticleComponent } from './article/article.component';
     ProduitComponent,
     CommandeComponent,
     ArticleComponent
-    
   ],
   imports: [
     BrowserModule,
@@ -53,6 +51,6 @@ import { ArticleComponent } from './article/article.component';
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
