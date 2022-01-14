@@ -32,10 +32,13 @@ export class ProduitComponent implements OnInit {
   constructor(private http: HttpClient, private route: ActivatedRoute, private router : Router) {}
 
   ngOnInit(): void {
-    this.getArticle();
-  };
-
-  
+    if (sessionStorage.getItem("nom_recherche")==""){
+      this.getArticle();
+    }else{
+      this.nom=sessionStorage.getItem("nom_recherche")
+      this.searchByNom()
+    }
+  }
 
   getArticle() {
     this.http.get('http://localhost:8080/formation/rest/produit').subscribe(
