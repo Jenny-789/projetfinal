@@ -29,7 +29,9 @@ message : string;
   constructor(private http: HttpClient , private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {    
-    
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+    });
     this.initarticle();
   }
 
@@ -60,6 +62,8 @@ message : string;
     this.http.get<Article>('http://localhost:8080/formation/rest/produit/' + this.id).subscribe(
       (response) => {
         this.article = response;
+        console.log(this.article);
+        
       },
       (err) => {
         console.log('ID KO');
