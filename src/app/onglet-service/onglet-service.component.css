@@ -76,6 +76,8 @@ h4 {
   border-bottom: 1px solid #c4c5c7;
 }
 
+/* Formulaire */
+
 .register-form {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   margin-left: 200px;
@@ -83,7 +85,7 @@ h4 {
   margin-bottom: 50px;
   padding-top: 50px;
   padding-bottom: 50px;
-  padding-left: 270px;
+  padding-left: 295px;
   background-color: #f5f6f8;
 }
 

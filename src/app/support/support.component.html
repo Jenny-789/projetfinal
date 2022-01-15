@@ -1,143 +1,175 @@
 <div class="div-global">
-    <div class="div-adresse" >
-        
-        <div>
-            <h3>Adresse</h3>
-            <br>
-            <p> Av. Francis Tonner, <br>
-            06100 Nice</p>
-        </div>
-        <br>
-        <div>
-            <h2>Appelez-nous</h2>
-            <br>
-            <p>+33492284365</p>
-        </div>
-        <br>
-        <div>
-            <h2>Support Général</h2>
-            <br>
-            <p>contact@jyta-technologies.fr</p>
-        </div>
+  <div class="div-adresse">
+    <div>
+      <h2>Adresse</h2>
+      <br />
+      <p>
+        Av. Francis Tonner, <br />
+        06100 Nice
+      </p>
+    </div>
+    <br />
+    <div>
+      <h2>Appelez-nous</h2>
+      <br />
+      <p>+33492284365</p>
+    </div>
+    <br />
+    <div>
+      <h2>Support Général</h2>
+      <br />
+      <p>contact@jyta-technologies.fr</p>
+    </div>
+  </div>
 
+  <!-- Formulaire  -->
+  <div class="div-formulaire">
+    <div>
+      <h2>Contactez nous :</h2>
     </div>
 
-     <!-- Formulaire  -->
-    <div class="div-formulaire">
+    <form [formGroup]="form">
       <div>
-        <h2>Contactez nous :</h2>
+        <label>Nom</label>
+        <input
+          type="text"
+          formControlName="nom"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['nom'].errors }"
+        />
+        <div *ngIf="submitted && f['nom'].errors" class="invalid-feedback">
+          <div *ngIf="f['nom'].errors['required']">Champ obligatoire</div>
+        </div>
       </div>
 
-      <form [formGroup]="form"  >
+      <div>
+        <label>Prenom</label>
+        <input
+          type="text"
+          formControlName="prenom"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['prenom'].errors }"
+        />
+        <div *ngIf="submitted && f['prenom'].errors" class="invalid-feedback">
+          <div *ngIf="f['prenom'].errors['required']">Champ obligatoire</div>
+        </div>
+      </div>
 
-        <div>
-          <label>Nom</label>
-          <input
-            type="text"
-            formControlName="nom"
-            class="form-control" 
-            [ngClass]="{ 'is-invalid': submitted && f['nom'].errors }"
-          />
-          <div *ngIf="submitted && f['nom'].errors" class="invalid-feedback">
-            <div *ngIf="f['nom'].errors['required']">Champ obligatoire</div>
+      <div>
+        <label>Numéro de Télephone</label>
+        <input
+          type="number"
+          formControlName="telephone"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['telephone'].errors }"
+        />
+        <div
+          *ngIf="submitted && f['telephone'].errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f['telephone'].errors['required']">Champ obligatoire</div>
+
+          <div *ngIf="f['telephone'].errors['minlength']">
+            Le numéro de téléphone doit contenir 10 caractères
+          </div>
+          <div *ngIf="f['telephone'].errors['maxlength']">
+            Le numéro de téléphone doit contenir 10 caractères
           </div>
         </div>
+      </div>
 
-        <div>
-            <label>Prenom</label>
-            <input
-              type="text"
-              formControlName="prenom"
-              class="form-control" 
-              [ngClass]="{ 'is-invalid': submitted && f['prenom'].errors }"
-            />
-            <div *ngIf="submitted && f['prenom'].errors" class="invalid-feedback">
-              <div *ngIf="f['prenom'].errors['required']">Champ obligatoire</div>
-            </div>
-          </div>
-
-          <div >
-            <label>Numéro de Télephone</label>
-            <input
-              type="number"
-              formControlName="telephone"
-              class="form-control"  
-              [ngClass]="{ 'is-invalid': submitted && f['telephone'].errors }"
-            />
-            <div *ngIf="submitted && f['telephone'].errors" class="invalid-feedback">
-              <div *ngIf="f['telephone'].errors['required']">Champ obligatoire</div>
-            
-                <div *ngIf="f['telephone'].errors['minlength']">
-                    Le numéro de téléphone doit contenir 10 caractères 
-                </div>
-                <div *ngIf="f['telephone'].errors['maxlength']">
-                    Le numéro de téléphone doit contenir 10 caractères
-                </div>
-            </div>
-          </div>
-    
-        <div >
-          <label>Email</label>
-          <input
-            type="text"
-            formControlName="email"
-            class="form-control" 
-            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
-          />
-          <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-            <div *ngIf="f['email'].errors['required']">Champ obligatoire</div>
-            <div *ngIf="f['email'].errors['email']">Email non valide</div>
-          </div>
+      <div>
+        <label>Email</label>
+        <input
+          type="text"
+          formControlName="email"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+        />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <div *ngIf="f['email'].errors['required']">Champ obligatoire</div>
+          <div *ngIf="f['email'].errors['email']">Email non valide</div>
         </div>
-  
-        <div >
-            <label for="msg">Message </label>
-            <textarea  type="text"
-            formControlName="message"
-            class="form-control "
-            [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"></textarea>
-      
-            <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
-              <div *ngIf="f['message'].errors['required']">Champ obligatoire</div>
-            </div>
-          </div>
-    
-  
-        <!-- <div class="form-group">
+      </div>
+
+      <div>
+        <label for="msg">Message </label>
+        <textarea
+          type="text"
+          formControlName="message"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"
+        ></textarea>
+
+        <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+          <div *ngIf="f['message'].errors['required']">Champ obligatoire</div>
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
             <button (click)="onSubmit()" class="btn btn-success"  value="Sign Up" >Envoyer</button>
         </div> -->
 
-        <!-- Button trigger modal -->
-        <div class="form-group">
-          <button [disabled]="form.controls['message'].invalid ||form.controls['email'].invalid || form.controls['nom'].invalid || form.controls['prenom'].invalid || form.controls['telephone'].invalid" (click)="onSubmit()" type="button" 
-          class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-            Envoyer
-          </button>
-        </div>
-        <!--  -->
+      <!-- Button trigger modal -->
+      <div class="form-group">
+        <button
+          [disabled]="
+            form.controls['message'].invalid ||
+            form.controls['email'].invalid ||
+            form.controls['nom'].invalid ||
+            form.controls['prenom'].invalid ||
+            form.controls['telephone'].invalid
+          "
+          (click)="onSubmit()"
+          type="button"
+          class="btn btn-outline-info"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          Envoyer
+        </button>
+      </div>
+      <!--  -->
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Message envoyé </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                Votre demande a bien été prise en compte. 
-              </div>
-              <div class="modal-footer">
-                <button type="button" (click)="reloadCurrentPage()" class="btn btn-secondary" href="/accueil" data-dismiss="modal">Retour à l'accueil </button>
-                
-              </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Message envoyé</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Votre demande a bien été prise en compte.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                (click)="reloadCurrentPage()"
+                class="btn btn-outline-info"
+                href="/accueil"
+                data-dismiss="modal"
+              >
+                Retour à l'accueil
+              </button>
             </div>
           </div>
         </div>
-     
-       
-      </form>
-    </div>
+      </div>
+    </form>
+  </div>
 </div>

@@ -1,0 +1,64 @@
+.nav1 {
+  text-align: right;
+}
+
+#logoNavBar {
+  width: 150px;
+  height: 130px;
+  position: center;
+}
+
+.navbar-brand {
+  position: absolute;
+  top: 0px;
+  left: 25%;
+  width: 50%;
+  height: 30px;
+  text-align: center;
+  background-color: black;
+}
+
+.logo-bgc {
+}
+
+.logo {
+  width: 250px;
+  position: absolute;
+  left: 475px;
+  top: -65px;
+}
+
+.imgpanier {
+  width: 25px;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.form-control {
+  height: 30px;
+  font-size: 0.7rem;
+}
+
+.btn {
+  height: 30px;
+  font-size: 0.7rem;
+}
+
+.menu {
+  background-color: #688aac;
+  height: 110px;
+  position: relative;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}

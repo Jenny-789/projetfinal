@@ -1,51 +1,39 @@
-<footer class="text-center text-lg-start bg-light text-muted">
-
-    <br>
-
-
-
-    <div class="container text-center text-md-start mt-5">
-        <div class="row mt-3">
-
-            <div class="col-md-4 mb-4">
-                <h6 class="text-uppercase fw-bold mb-4">Newsletter</h6>
-                <div class="register-form">
-                  
-                    
-                    <form class="input-group">
-                        <input type="text"  name = "email" class="form-control form-control-sm"
-                            placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2"
-                            [(ngModel)]="newsletter.email"
-                           >
-                        <div class="input-group-append">
-                            <p><button (click)= "newslettersave()" mdbBtn color="white" outline="true" size="sm"
-                                    mdbWavesEffect> S'abonner</button></p>
-                        </div>
-                    </form>
-
-                    
-                    <!-- {{message}} -->
-                   
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <h6 class="text-uppercase fw-bold mb-4">Contactez-nous</h6>
-                <p>
-                    <i class="fas fa-home me-3"></i> Nice, France
-                </p>
-                <p>
-                    <i class="fas fa-envelope me-3"></i> contact@jyta-technologies.fr
-                </p>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">© 2022
-        Copyright JYTA Technologies 2022 - <a routerLink="/mentions"> Mentions légales </a>-<a routerLink="/cgv"> CGV
-        </a></div>
-
+<footer>
+  <section class="flex">
+    <article class="art">
+      <h6>Newsletter</h6>
+      <input
+        type="text"
+        name="email"
+        class="form-control form-control-sm"
+        placeholder="Entrez votre email"
+        aria-label=" email"
+        aria-describedby="basic-addon2"
+        [(ngModel)]="newsletter.email"
+      />
+      <button
+        (click)="newslettersave()"
+        mdbBtn
+        color="white"
+        outline="true"
+        class="btn btn-outline-dark"
+        size="sm"
+        mdbWavesEffect
+      >
+        S'abonner
+      </button>
+    </article>
+    <article class="art">
+      <h6>Contactez-nous</h6>
+      <p><i class="fas fa-home me-3"></i> Nice, France</p>
+      <p><i class="fas fa-envelope me-3"></i> contact@jyta-technologies.fr</p>
+    </article>
+  </section>
 </footer>
+
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+  © 2022 Copyright JYTA Technologies 2022 -
+  <a routerLink="/mentions"> Mentions légales </a>-<a routerLink="/cgv">
+    CGV
+  </a>
+</div>

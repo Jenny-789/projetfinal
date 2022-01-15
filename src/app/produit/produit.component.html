@@ -82,10 +82,10 @@
       <!-- Par prix -->
       <article>
         <h4>Prix</h4>
-        <p class="min">Prix minimum</p> <input type="number" [(ngModel)]="min" />  <p class="max">Prix maximum</p><input
-          type="number"
-          [(ngModel)]="max"
-        />
+        <p class="min">Prix minimum</p>
+        <input type="number" [(ngModel)]="min" />
+        <p class="max">Prix maximum</p>
+        <input type="number" [(ngModel)]="max" />
         <button (click)="searchByPrix()" class="btn btn-outline-info trouver">
           Trouver
         </button>
@@ -101,13 +101,35 @@
         *ngFor="let pist of myList; let iteration = index"
       >
         <input type="hidden" value="{{ iteration }}" />
-        <img src="{{ pist.lienImage }}"  alt="Ecran 1" class="img-produit" />
+        <img src="{{ pist.lienImage }}" alt="Ecran 1" class="img-produit" />
         <span class="span-produit">{{ pist.nom }}</span>
-        <p>{{pist.description}}</p>
-        <p class="prix-produit">A partir de {{pist.prix}}€</p>
+        <p>{{ pist.description }}</p>
+        <p class="prix-produit">A partir de {{ pist.prix }}€</p>
         <div class="container mt-3">
-          <button type="submit" class="btn btn-outline-info"   routerLink="/article/{{pist.id}}"value="{{ iteration }}" >
-En savoir plus          </button> 
+          <button
+            type="submit"
+            class="btn btn-outline-info"
+            routerLink="/article/{{ pist.id }}"
+            value="{{ iteration }}"
+          >
+            En savoir plus
+          </button>
+        </div>
+      </article>
+      <article class="art-produit">
+        <img
+          src="/assets/ImagesProduit/serveur4.JPG"
+          alt="Ecran 1"
+          class="img-produit"
+        />
+        <span class="span-produit">Serveurs</span>
+        <p>
+          Découvrez tous nos serveurs hautes puissances disponibles à l'achat ou
+          en location.
+        </p>
+        <p class="prix-produit">A partir de 4300€</p>
+        <div class="container mt-3">
+          <a class="btn btn-outline-info" href="service"> En savoir plus </a>
         </div>
       </article>
     </section>
@@ -115,17 +137,14 @@ En savoir plus          </button>
 
   <br />
 
-
-
-
-    <!-- <section class="sect-produit">
+  <!-- <section class="sect-produit">
      Articles produit
 
       <article class="art-produit" *ngFor="let pist of myList; let iteration = index" >
         <input type="hidden" value="{{ iteration }}" >
          <form (ngSubmit)="addTer()"> -->
-          <!-- <form #signupForm="ngForm" (ngSubmit)="addTer(signupForm)"> -->
-          <!-- <input type="text" name="nom" id="nom" value="{{ pist.nom }}" ngModel>
+  <!-- <form #signupForm="ngForm" (ngSubmit)="addTer(signupForm)"> -->
+  <!-- <input type="text" name="nom" id="nom" value="{{ pist.nom }}" ngModel>
           <input type="text" name="prix" id="prix" value="{{ pist.prix }}" ngModel>
           <input type="text" name="test" id="test" value="bonjour" ngModel>
             
@@ -141,7 +160,7 @@ En savoir plus          </button>
               Ajouter au panier
             </button> -->
 
-            <!-- <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" >
+  <!-- <button type="submit" class="btn btn-outline-info" value="{{ iteration }}" >
               Ajouter au panier
             </button> 
           </div>
@@ -153,8 +172,4 @@ En savoir plus          </button>
 
   <br />
   {{ message }} -->
-
-
-
-
 </body>

@@ -6,7 +6,30 @@ p {
   text-align: center;
 }
 
+p:nth-of-type(2) {
+  padding-bottom: 50px;
+}
+
 .panier {
   margin-top: 50px;
   margin-left: 377px;
+}
+
+.total {
+  display: flex;
+  margin-top: 50px;
+}
+
+.pe-5 {
+  margin-left: 40px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  background-color: #d6d8db;
+  padding: 15px;
+}
+
+.accueil {
+  margin-left: 200px;
 }
