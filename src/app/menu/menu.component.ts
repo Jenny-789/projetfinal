@@ -12,6 +12,7 @@ export class MenuComponent implements OnInit {
   message: string;
   connecte: string;
 
+  tab: any;
   myList: any;
   nom="";
 
@@ -29,7 +30,8 @@ export class MenuComponent implements OnInit {
       this.connecte = '';
     } else {
       this.authService.setLoggedUserFromLocalStorage(loggedUser);
-      this.connecte = 'Connecté';
+      this.tab = JSON.parse(localStorage.getItem('loggedUser'));
+      this.connecte = this.tab.prenom;
     }
   } 
 
@@ -46,4 +48,7 @@ export class MenuComponent implements OnInit {
   onLogout() {
     this.authService.logout();
   }
+
+
+  
 }

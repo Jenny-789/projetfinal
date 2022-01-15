@@ -1,0 +1,14 @@
+#logoNavBar {
+    width: 150px;
+    height: 130px;
+    position: center;
+}
+.navbar-brand {position:absolute; left:25%; width:50%; text-align:center;}
+
+.imgpanier {
+    position: absolute;
+    top: 25px;
+    width: 20px;
+    height: 20px;
+    right: 250px;
+}
