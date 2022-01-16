@@ -9,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 export class ProfilComponent implements OnInit {
   tab: any;
   currentDate = new Date();
-  constructor() {}
+  myList: any;
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.tab = JSON.parse(localStorage.getItem('loggedUser'));
+    this.getCommandes();
+  }
+
+  getCommandes() {
+    this.http
+      .get('http://localhost:8080/formation/rest/commande/' + this.tab.nom)
+      .subscribe(
+        (response) => {
+          this.myList = response;
+          console.log(this.myList);
+        },
+        (err) => {
+          console.log('**********KO');
+        }
+      );
   }
 }

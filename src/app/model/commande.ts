@@ -1,6 +1,6 @@
 export class Commande {
-  id: number;
   date: Date;
+  nom: string;
   prixTotal: number;
   status: string;
 }

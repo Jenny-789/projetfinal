@@ -17,6 +17,7 @@ export class CommandeComponent implements OnInit {
   currentDate = new Date();
   count: number;
   panier: Array<Article>;
+  tab: any;
   prixtttab: number[];
   prixtt = 0;
 
@@ -26,6 +27,7 @@ export class CommandeComponent implements OnInit {
   ngOnInit(): void {
     // this.getListArticleFroSession();
     this.panier = JSON.parse(localStorage.getItem('panier'));
+    this.tab = JSON.parse(localStorage.getItem('loggedUser'));
     console.log(this.panier);
   }
 
@@ -64,6 +66,7 @@ export class CommandeComponent implements OnInit {
 
   create() {
     this.newCommande.date = this.currentDate;
+    this.newCommande.nom = this.tab.nom;
     this.newCommande.prixTotal = this.prixPanier();
     this.newCommande.status = 'Validé';
     const body = JSON.stringify(this.newCommande);

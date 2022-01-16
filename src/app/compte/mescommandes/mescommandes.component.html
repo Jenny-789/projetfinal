@@ -14,30 +14,21 @@
           <table class="table">
             <thead>
               <tr>
-                <th>Commande</th>
                 <th>Date</th>
+                <th>Nom</th>
                 <th>Total</th>
                 <th>Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Lundi 11 Janvier 2022</td>
-                <td>1 200€</td>
-                <td>Validé</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Mardi 12 Janvier 2022</td>
-                <td>420€</td>
-                <td>Validé</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Lundi 17 Janvier 2022</td>
-                <td>4 500€</td>
-                <td>Validé</td>
+              <tr
+                scope="row"
+                *ngFor="let pist of myList; let iteration = index"
+              >
+                <td>{{ pist.date | date: "dd-MM-yyyy" }}</td>
+                <td>{{ pist.nom }}</td>
+                <td>{{ pist.prixTotal }} €</td>
+                <td>{{ pist.status }}</td>
               </tr>
             </tbody>
           </table>
