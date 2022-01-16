@@ -1,0 +1,73 @@
+.img-bg {
+  background-image: url("/assets/ImagesSite/locaux.jpg");
+  background-size: cover;
+  height: 600px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+h1 {
+  font-size: 2rem;
+  padding-top: 30px;
+  padding-left: 30px;
+  margin-bottom: 80px;
+  color: white;
+}
+
+.encadre {
+  text-align: center;
+  border: 1px solid black;
+  margin-right: 200px;
+  padding-top: 10px;
+  background-color: #f5f6f8;
+  opacity: 0.6;
+  position: absolute;
+  top: 270px;
+  left: 90px;
+  width: 500px;
+}
+
+.fond-trans {
+  background-color: black;
+  opacity: 0.6;
+  width: 565px;
+  height: 600px;
+  text-align: center;
+}
+
+.text {
+  margin: 110px;
+}
+
+h3 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.white {
+  color: white;
+  font-size: 0.8rem;
+}
+
+.img-div {
+  position: relative;
+}
+
+h2 {
+  position: absolute;
+  color: white;
+  top: 30px;
+  left: 490px;
+  font-size: 1.5rem;
+}
+
+.img-blue {
+  width: 1300px;
+}

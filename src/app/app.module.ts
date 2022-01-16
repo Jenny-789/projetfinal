@@ -23,6 +23,8 @@ import { ProduitComponent } from './produit/produit.component';
 import { CommandeComponent } from './commande/commande.component';
 import { ArticleComponent } from './article/article.component';
 import { ValidationcommandeComponent } from './validationcommande/validationcommande.component';
+import { MescommandesComponent } from './compte/mescommandes/mescommandes.component';
+import { AproposComponent } from './apropos/apropos.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ValidationcommandeComponent } from './validationcommande/validationcomm
     ProduitComponent,
     CommandeComponent,
     ArticleComponent,
-    ValidationcommandeComponent
+    ValidationcommandeComponent,
+    MescommandesComponent,
+    AproposComponent,
   ],
   imports: [
     BrowserModule,

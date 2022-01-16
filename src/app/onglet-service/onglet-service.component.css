@@ -2,6 +2,7 @@
 
 .bg-img {
   background-image: url("/assets/ImagesSite/server.jpg");
+  background-size: cover;
   height: 400px;
 }
 

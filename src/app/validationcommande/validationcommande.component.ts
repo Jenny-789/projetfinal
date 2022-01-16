@@ -18,15 +18,7 @@ export class ValidationcommandeComponent implements OnInit {
     // this.getListArticleFroSession();
     this.panier = JSON.parse(localStorage.getItem('panier'));
     console.log(this.panier);
-  }
-
-  deletearticle(x) {
-    this.panier.splice(x, 1);
-    localStorage.setItem('panier', JSON.stringify(this.panier));
-  }
-
-  majpanier() {
-    localStorage.setItem('panier', JSON.stringify(this.panier));
+    localStorage.removeItem('panier');
   }
 
   prixligne(x) {

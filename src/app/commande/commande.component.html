@@ -65,9 +65,9 @@
       {{ prixPanier() | currency: "":"":"3.0-1" }} €</span
     >
     <div>
-      <a class="btn btn-outline-info achat" href="validation"
-        >Valider mon panier
-      </a>
+      <button (click)="create()" class="btn btn-outline-info achat">
+        Valider mon panier
+      </button>
     </div>
     <div>
       <a class="btn btn-outline-info panier" href="produit"

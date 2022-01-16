@@ -41,51 +41,31 @@ h1 {
 
 a {
   text-decoration: none;
-  color: black;
-}
-
-/*************** Ligne 2 ******************/
-.art-compte {
-  background-color: #688aac;
-  border: 1px solid black;
-  margin-right: 20px;
-  width: 200px;
   color: white;
 }
 
-.ligne2 {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-}
-
-.pen {
-  fill: white;
-}
-
-p {
-  width: 350px;
-  font-size: 0.8rem;
-  padding-left: 50px;
-  margin-right: 50px;
+/*************** Ligne 2 ******************/
+.titre {
+  margin-top: 20px;
+  margin-left: 30px;
 }
 
 .span2 {
-  font-size: 0.8rem;
-  padding-right: 40px;
-  margin-left: 15px;
-  font-weight: bold;
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 0.7rem;
 }
 
-img {
-  width: 15px;
-  height: auto;
-  margin-right: 10px;
+.imput1 {
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size: 0.6rem;
 }
 
-.span3 {
-  font-size: 0.8rem;
-  margin-left: 15px;
+.valider {
+  font-size: 0.6rem;
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 /*************** Ligne commmande ******************/

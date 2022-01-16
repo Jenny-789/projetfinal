@@ -1,0 +1,62 @@
+<body>
+  <h1>Mon compte</h1>
+  <!------------ Bandeau ---------------->
+  <div class="bandeau">
+    <section class="info">
+      <div class="ligne1">
+        <span class="span1"
+          >Bonjour {{ tab.prenom }}, voici l'historique de vos commandes.</span
+        >
+      </div>
+      <div class="ligne2">
+        <p class="titre">Historique de commandes</p>
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Commande</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Lundi 11 Janvier 2022</td>
+                <td>1 200€</td>
+                <td>Validé</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Mardi 12 Janvier 2022</td>
+                <td>420€</td>
+                <td>Validé</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Lundi 17 Janvier 2022</td>
+                <td>4 500€</td>
+                <td>Validé</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!------------ Choix ---------------->
+    <section>
+      <article class="art-choix">
+        <a href="profil" class="a-choix"
+          ><span class="span-choix">Mon profil</span></a
+        >
+        <a href="coordonnees" class="a-choix"
+          ><span class="span-choix">Mes coordonnées</span></a
+        >
+        <a href="mescommandes" class="a-choix"
+          ><span class="span-choix">Mes commandes</span></a
+        >
+      </article>
+    </section>
+  </div>
+</body>
